@@ -1,0 +1,223 @@
+\documentclass[twosided,a4,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{german}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{pifont}
+\usepackage{nicefrac}
+\usepackage{sectsty}
+\usepackage{lipsum}  
+
+% ------
+% Fonts and typesetting settings
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\linespread{1.1} % Palatino needs more space between lines
+\usepackage{microtype}
+\subsectionfont{\fontsize{10}{15}\selectfont}
+
+% ------
+% Page layout
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry}
+\usepackage[font=it]{caption}
+\usepackage{paralist}
+\usepackage{multicol}
+
+% ------
+% Abstract
+\usepackage{abstract}
+	\renewcommand{\abstractnamefont}{\normalfont\bfseries}
+	\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
+
+
+% ------
+% Titling (section/subsection)
+\usepackage{titlesec}
+\renewcommand\thesection{\Roman{section}}
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{}
+
+% ------
+% Clickable URLs (optional)
+\usepackage{hyperref}
+
+% ------
+% Header/footer
+\usepackage{fancyhdr}
+	\pagestyle{fancy}
+%	\fancyhead{}
+	\fancyfoot[C]{Wissenschaftliches Seminar WS 2017/18 $\cdot$
+          Software Engineering $\cdot$ Prof. Skornia}
+	\fancyhead[C]{OTH Regensburg $\cdot$ Fakultät IM \newline \newline } 
+	\fancyfoot[RO,LE]{\thepage}
+
+
+
+% ------
+% Maketitle metadata
+\title{\vspace{-5mm}%
+	\fontsize{20pt}{10pt}\selectfont
+	\textbf{Adventures in Attacking Wind Farm}
+	}	
+\vspace{-5mm}\date{}
+\author{
+	\large
+       \begin{minipage}[t]{0.33\linewidth}
+         \begin{center}
+           	\textsc{Butrint Dehari}\\[2mm]
+                 \normalsize	Matr.nr: 123456\\
+                 \normalsize
+                 \href{mailto:autor1@stud.oth-regensburg.de}
+                 {autor1@stud.oth-regensburg.de}      
+         \end{center}
+       \end{minipage}        
+       \begin{minipage}[t]{0.33\linewidth}
+         \begin{center}
+           	\textsc{Celestin}\\[2mm]
+                 \normalsize	Matr.nr: 123456\\
+                 \normalsize
+                 \href{mailto:autor2@stud.oth-regensburg.de}
+                 {autor2@stud.oth-regensburg.de}      
+         \end{center}
+       \end{minipage}
+       \begin{minipage}[t]{0.33\linewidth}
+         \begin{center}
+           	\textsc{Zhong XU}\\[2mm]
+                 \normalsize	Matr.nr: 123456\\
+                 \normalsize
+                 \href{mailto:autor3@stud.oth-regensburg.de}
+                 {autor3@stud.oth-regensburg.de}      
+         \end{center}
+       \end{minipage}
+     }
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\tableofcontents
+
+\maketitle
+\thispagestyle{fancy}
+
+\begin{abstract}
+\noindent Hier kommt die Zusammenfassung...
+\lipsum[1]
+\end{abstract}
+	
+
+\begin{multicols}{2}
+
+
+\section{Chapter 1 : General Presentation}
+
+ Und noch etwas Text... \cite{muster}
+ \subsection{subsection 1}
+ \lipsum[1]
+ \subsection{subsection 2}
+ \lipsum[1]
+ 
+ 
+ 
+\section{Chapter 2 : Anatomy of a Wind Turbine and Wind Farm Infrastructure}
+
+\subsection{Anatomy of a Wind Turbine}
+
+ \subsubsection{Rotors and Blades}
+ Und noch etwas Text... \cite{muster} \newline
+ \lipsum[1]
+ \subsubsection{Drive trains}
+ \lipsum[1]
+ \subsubsection{Gear boxes}
+ \lipsum[1]
+ \subsubsection{Generators}
+ \lipsum[1]
+ \subsubsection{Nacelles}
+ \lipsum[1]
+ \subsubsection{Towers}
+ \lipsum[1]
+ 
+\subsection{Wind Farm Infrastructure}
+ \subsubsection{Wind farm power infrastructure}
+ \lipsum[1]
+ \subsubsection{Wind farm communication infrastructure}
+ \lipsum[1]
+ 
+ 
+\section{Chapter 3 : Security Breach and Ransom }
+
+\subsection{Introduction}
+ \textbf{Talk about the risk management in Security}
+ \lipsum[1]
+
+
+\subsection{Physical Attack}
+ \subsubsection{Vandalism}
+ Und noch etwas Text... \cite{muster} \newline
+ \lipsum[1]
+ \subsubsection{Physical Access}
+ \lipsum[1]
+ 
+\subsection{Network breach}
+ \subsubsection{Windshark}
+ \lipsum[1]
+ \subsubsection{Windpoison}
+ \lipsum[1]
+ \subsubsection{Others}
+ \textbf{Black Box}
+ \lipsum[1]
+ 
+\subsection{Ransom}
+ \subsubsection{Bitcoin}
+ \lipsum[1]
+ \subsubsection{Operation}
+ \lipsum[1]
+
+
+
+\section{Chapter 4 : Attack Mitigation }
+
+\subsection{Introduction}
+ \textbf{Talk about the risk which we can prevent}
+ \lipsum[1]
+
+
+
+\subsection{Physical Access}
+ \subsubsection{Access Control}
+ \lipsum[1]
+
+ \subsubsection{Locking System}
+ Und noch etwas Text... \cite{muster} \newline
+ \lipsum[1]
+ \subsubsection{Quick Response}
+ \lipsum[1]
+
+ 
+\subsection{Network Mitigation}
+ \subsubsection{SSL/TLS}
+ \lipsum[1]
+ \subsubsection{VPN}
+ \lipsum[1]
+ \subsubsection{Access restriction}
+ \textbf{White List}
+ \lipsum[1]
+ 
+\subsection{Best Practice}
+ \lipsum[2]
+
+ 
+ 
+\bibliographystyle{lit}
+\bibliography{lit}
+\end{multicols}
+
+\end{document}
+
+
+
