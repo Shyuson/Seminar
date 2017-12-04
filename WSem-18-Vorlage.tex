@@ -178,11 +178,85 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
  \lipsum[1]
  
  
-\section{Chapter 3 : Security Breach and Ransom }
+\section{Chapter 3 : Risk Management and Ransom } 
+\subsection{Introduction}
+An attacker intending to disrupt wind farm operations or damage equipment would concentrate on six types of targets: (i) control networks; (ii) programmable logic/automation controllers; (iii) network devices; (iv) operator stations; (v) engineering workstations; and (vi) historians. The targets may be accessed using several alternative. The main reason is often the money. Most often we use a ransomware with a cryptocurrency. The most famous cryptocurrency is the Bitcoin . Company can protect their systems. But unfortunately the 0 risk don't exist in the world.
+
+\subsection{Definition of Risk Management}
+A security risk assessment is an important element in the overall security risk
+management process. Security risk management involves the process of ensuring
+that the risk posture of an organization is within acceptable bounds as defined by
+senior management. Each security breach has a mitigation. Th main problem issue in security in network is that we don't know how an attacker will to invade our system. That's why a security risk assessment allow company to simulate or imagine several kind of attack and see if their system has a failure.\newline
+There are four stages of the security risk management process:
+(i) security risk assessment; (ii) test and review; (iii) security risk mitigation; and (iv) operational security.
+\begin{itemize}
+    \item \textbf{Security Risk Assessment} : This is an objective analysis of the effectiveness of the current security controls that protect an organization’s assets and a
+    determination of the probability of losses to those assets. A security risk
+    assessment reviews the threat environment of the organization, the value of
+    assets, the criticality of systems, the vulnerabilities of the security controls,
+    the impact of expected losses, and recommendations for additional controls
+    to reduce risk to an acceptable level. Based on this information the senior
+    management of the organization can determine if additional security
+    controls are required.
+    \item \textbf{Test and Review} : Security testing is the examination of the security
+    controls against the security requirements. Security controls are determined
+    during the security risk assessment and tested during security testing efforts.
+    Security testing is performed more frequently than security risk assessments.
+    \item \textbf{Risk Mitigation} : Risks to an organization’s assets are reduced through
+    the implementation of new security controls or the improvement of existing
+    controls. Security risk assessments provide information to allow the
+    senior management to make risk-based decisions for the development of
+    new controls or expenditure of resources on security improvements on existing controls. Security test and review efforts provide information on
+    how to keep existing controls up to date. Risk can be mitigated through
+    corrections and additional controls or accepted or transferred.
+    \item \textbf{Operational Security} : The implementation and operation of most
+    security controls are performed by operational personnel. Daily and weekly
+    activities such as applying patches, performing account maintenance, and
+    providing security awareness training are essential for maintaining an
+    adequate security posture.
+\end{itemize}
+
+\includegraphics[scale=0.65]{security_management}
+
+\textbf{Add some explication ont these parts.} 
+ 
+ 
+\subsection{Ransomware and cryptocurrency}
+\subsubsection{Ransomware}
+Ransomware is a type of malicious software from cryptovirology that threatens to publish the victim's data or perpetually block access to it unless a ransom is paid. While some simple ransomware may lock the system in a way which is not difficult for a knowledgeable person to reverse, more advanced malware uses a technique called cryptoviral extortion, in which it encrypts the victim's files, making them inaccessible, and demands a ransom payment to decrypt them.\newline
+There are two main forms of ransomware in circulation today:
+\begin{itemize}
+    \item Locker ransomware(computer locker):
+Denies access to the
+computer or device
+\item Crypto ransomware
+(data locker): Prevents
+access to files or data.
+\end{itemize}
+Crypto ransomware doesn’t necessarily have to use encryption to stop users from accessing their data, but the vast majority of it does. Both types of ransomware are aimed squarely at our digital lifestyle. They are designed to deny us access something we want or need and offer to return what is rightfully ours on payment of a ransom. Despite having similar objectives, the approaches taken by each type of ransomware are quite different.
+In our case, the objective is to take control and stop the operation of Windfarm. Then the attacker send a email to demand money via a cryptocurrency like Bitcoin
+
+
+\subsubsection{cryptocurrency : Bitcoin}
+
+Bitcoin is a collection of concepts and technologies that form the basis of a digital money ecosystem. Units of currency called bitcoins are used to store and transmit value among participants in the bitcoin network. Bitcoin users communicate with each other using the bitcoin protocol primarily via the Internet, although other transport networks can also be used. The bitcoin protocol stack, available as open source software, can be run on a wide range of computing devices, including laptops and smartphones, making the technology easily accessible. \newline
+Users can transfer bitcoins over the network to do just about anything that can be done with conventional currencies, including buy and sell goods, send money to people or organizations, or extend credit. Bitcoins can be purchased, sold, and exchanged for other currencies at specialized currency exchanges. Bitcoin in a sense is the perfect form of money for the Internet because it is fast, secure, and borderless.\newline
+\newline
+Unlike traditional currencies, bitcoins are entirely virtual. There are no physical coins or even digital coins per se. The coins are implied in transactions that transfer value from sender to recipient. Users of bitcoin own keys that allow them to prove ownership of transactions in the bitcoin network, unlocking the value to spend it and transfer it to a new recipient. Those keys are often stored in a digital wallet on each user’s computer. Possession of the key that unlocks a transaction is the only prerequisite to spending bitcoins, putting the control entirely in the hands of each user.\newline
+The bitcoin system, unlike traditional banking and payment systems, is based on de-centralized trust. Instead of a central trusted authority, in bitcoin, trust is achieved as an emergent property from the interactions of different participants in the bitcoin system. the transaction is flowing on per-to-per network. It's give a 
+complete anonymous. That's why is used
+ 
+\section{Chapter 4 : Security Breach}
 
 \subsection{Introduction}
- \textbf{Talk about the risk management in Security}
- \lipsum[1]
+ According to Staggs, a Ph.D. from University of Tulsa in Tulsa in Oklahoma, There are some vulnerabilities in wind farm nowaday. He listed a overviews of vulnerabilities facing wind farms:
+ \begin{itemize}
+     \item Programmable automation controllers (PACs) running legacy operating systems, everything is operating as a root, use of insecure remote management services, easy to figure out default passwords, and no code signing
+    \item	No authentication or encryption of control messages
+    \item	No network segmentation between wind turbines
+    \item	No physical security
+ \end{itemize}
+ Let's talk about some specific attack in the following chapter.
 
 
 \subsection{Physical Attack}
