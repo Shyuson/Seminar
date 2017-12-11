@@ -97,7 +97,7 @@
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
 \tableofcontents
@@ -172,9 +172,42 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
 \end{description}
 
 \section{Chapter 2 : Wind Farm Infrastructure }
- \subsection{Wind farm power infrastructure}
- \lipsum[1]
  \subsection{Wind farm communication infrastructure}
+  \subsubsection{Overview of IEC-61400-25 standard}
+  	The IEC-61400-25 standard was developed because different Wind Power Plant(WPP) technologies from different manufacturers resulted in technical, implementation and maintenance difficulties. The focus of this standard is on the communication between power plant components like wind turbines and actors like SCADA systems. A SCADA (Supervisory control and data acquisition) system is a software system that is used for controlling, monitoring and analyzing a process. This software communicates with the controller that is running the actual process. Typically these controllers would be PLC(Programmable Logic Controllers) or RTU(Remote Control Unit). The SCADA system gathers real time information from these controllers and brings them to the system where they are presented in a Graphical User Interface to the operators that are running the process. The IEC-61400-25 standard is comprised of six parts, namely: 
+  	\begin{description}
+  		\item[$\bullet$] 
+  			\textit{Part 1- Overall description of principles and models:} provides an overview of the standard, defines some of the terminology used in the following parts and outlines the underlying modeling concept.
+  		\item[$\bullet$] 
+  			\textit{Part 2 - Information models:} introduces and defines the data objects which are referred to as logical nodes, specific to a wind turbine communication.
+  		\item[$\bullet$] 
+  			\textit{Part 3 - Information exchange models:} describes the required mechanisms and protocols of data exchange, like authenticating a client, sending a control command or accessing the self-description of a device.
+  		\item[$\bullet$] 
+  			 \textit{Part 4 - Mapping to communication profiles:} defines the message format of the individual data exchange transactions. The already existing mappings are web services, IEC-61850-8-1 MMS, OPC XML DA, IEC 60870-5-104, and DNP3. 	
+  		\item[$\bullet$]	
+  		 	 \textit{Part 5 - Conformance testing:} specifies standardized procedures for verifying that a given implementation adheres to the standard.
+  		\item[$\bullet$]	
+  			\textit{Part 6 - Logical node classes and data classes for condition monitoring:} extends the defined name spaces with logical nodes and possibly new data classes for condition monitoring.
+  			
+  			TODO: Add References->
+  		
+  			https://pdfs.semanticscholar.org/3522/1c7994907b073f1b2401c610792336a0df7b.pdf.
+  		
+  			http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4694219
+  		
+  	\end{description}
+  \subsubsection{SOAP based web services}
+  	NOTE: check the security of these services, research vulnerability issues about these services. So have in mind the security of these services besides the general point.
+  	
+  	check : http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4558422
+  	http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=991449
+  \subsubsection{OPC XML-DA services}	
+   	NOTE: check the security of these services, research vulnerability issues about these services. So have in mind the security of these services besides the general point.
+   	
+   	check: http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4020022
+ \subsection{Wind farm power infrastructure}
+  \lipsum[1]
+\section{Chapter 3 : Security Breach and Ransom }
  \lipsum[1]
  
  
@@ -247,6 +280,7 @@ The bitcoin system, unlike traditional banking and payment systems, is based on 
 complete anonymous. That's why is used
  
 \section{Chapter 4 : Security Breach}
+>>>>>>> 089260887ca32959f295e9440f6249aa77a3212e
 
 \subsection{Introduction}
  According to Staggs, a Ph.D. from University of Tulsa in Tulsa in Oklahoma, There are some vulnerabilities in wind farm nowaday. He listed a overviews of vulnerabilities facing wind farms:
@@ -290,6 +324,7 @@ Perhaps the most significant threat to wind farm is physical access to wind turb
 %\subsection{Introduction}
 % \textbf{Talk about the risk which we can prevent}
 % \lipsum[1]
+
 
 
 
