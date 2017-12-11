@@ -260,60 +260,62 @@ complete anonymous. That's why is used
 
 
 \subsection{Physical Attack}
- \subsubsection{Vandalism}
- Und noch etwas Text... \cite{muster} \newline
- \lipsum[1]
- \subsubsection{Physical Access}
- \lipsum[1]
+Five distinct attack vectors are available to target a wind farm control network: cyber access using a wind farm vendor network; cyber access using technician equipment; and cyber via a compromised supply chain, and the most important part in our topic; physical access at a wind turbine, physical access at a substation.
+ \subsubsection{Physical access at a wind turbine}
+ Wind turbines are generally erected in remote locations with adequate wind speed duration. However, the physical security mechanisms that protect against unauthorized entry inside a wind turbine are fairly simplistic. Typically, the door to a turbine is secured by padlock that can be easily picked or bypassed using bolt cutters. Even if a turbine door has an expensive security mechanism that alert a control center about unauthorized entry, because of the remote location, it may take considerable time for responder to reach the turbine to investigate the unauthorized entry.
+ \newline
+Once inside the turbine, an attacker could access the wind farm control network by plugging a malicious device such as a Raspberry Pi or a Gustix into network switch. One option is to keep the network configuration intact and insert the malicious device as an additional node in the network. the attacker can use the malicious node to target other nodes in the network. These nodes include other connected turbines and substations. A malicious device configured as a new node in the wind farm control network is susceptible to discovery upon visual inspection as well as over the network. therefore, a more sophisticated access strategy is to position the malicious deice in a man-in-the middle configuration. This involves unplugging a network connection to a trusted device, inserting the malicious device before the device and quickly restoring network connectivity. Implanting the malicious device would cause a temporary disruption, which might be noticed at the transient nature of disruption and timely resumption of network connectivity, it is unlikely that security personnel would immediately trail to the site to investigate the anomaly. A more sophisticated approach is to hide a man-in-the-middle rouge device inside a trusted industrial control system component. This parasitic device drawn power from the same source as the control system component and would be difficult to discover without a detailed inspection involving the removal and disassembly of the control system component. Having gained access to wind farm control network, the attacker could target a variety of information technology and control system assets directly or the attacker could implant malware. The threats include obtaining information about devices, protocols, network configurations and operations; disrupting wind farm operations; and even damaging key physical component, including the wind turbine itself.
+ \subsubsection{Physical access at a substation}
+ Unlike wind turbines, substations have strong physical security mechanisms such as locks, cameras, motion sensors, remote alerting systems, reinforced constructions and fences. However, substations are still vulnerable to physical penetration and can also be accessed by malicious insiders. Since many substations are located in remote areas and are usually unnamed, it may take some time for security personnel to respond to the site of a breach. Having breached a substation, an attacker can apply the same techniques and tools used to gain access to the wind farm control networks; install persistent, hard-to-discover, parasitic devices; implant malware to surveil and disrupt wind farm operations; and possibly damage or destroy wind farm assets. In fact, unauthorized access to a substation could have more serious implications than a wind turbine breach. This is because the attacker can potentially manipulate the operations controls system as well as the transmission control system.
+ \subsubsection{Cyber asses using technician equipment}
+ Compromising operator and or service personnel equipment either directly via a flash drive or hands-on access, or indirectly via spear phishing can bridge air-gapped networks. The initial additional tools or malware (for privilege escalation, enhanced access and persistence) to eventually launch attacks against wind turbines and substations. Technicians equipment that could be compromised includes standard laptops, workstations and mobile communications devices. Of a particular interest to attackers are handled devices used by wind farm personnel to performs maintenance on turbine controls systems. This device communicates with a wind turbine control system over a common network medium (RS-232 or ethernet). Compromising such device enables an attacker to target trusted control network assets as well as physical equipment.
+ \subsubsection{Cyber access via a compromised supply chain}
+ This attack vector can be used to achieved similar access and effects as cyber access using technician equipment. However, in this case, information technology and industrial controls system hardware, firmware and software are compromised in the supply chain, before they are installed at a wind farm
+ \newline We can’t talk about the windfarm physical attack without speaking about how to avoid the in another’s words physical security.
+ 
+ \subsubsection{Cyber access using a wind farm vendor network}
+ In many cases, wind farm vendors have unfettered remote virtual private network (VPN) access to wind farm control networks for monitoring, software upgrades and maintenance. This access may also be provided to vendors for research and development efforts, especially for evaluating product enhancements. Granting remote access to a wind farm vendor introduces risk and creates disturbing cyber attack environment. This is because the vendor network becomes a single point of access to multiple wind farm deployments, including wind farms belonging to other companies that rely on the vendors for products and services. An attacker could gain access to a vendor network in any number of ways, including via spear phishing campaigns, malicious insiders or physical breaches. After the vendors network is compromised, the attacker can leverage trust relationships to orchestrate attacks on multiple wind farms and their assets. During a security assessment of a wind farm conducted by authors of this paper, a vendor was observed to have remote access (from abroad) to the wind farm operations network. Standard network management protocols were utilized by the vendor, presumably for pushing software upgrades and performing diagnostics. Although the remote vendor communications were encrypted and tunneled over a VPN, the encapsulating protocols were outdated and unencrypted. This could enable a malicious entity to intercept, manipulate and fabricate messages, and launch a slew of attacks against wind turbines, substations and even win farm vendor networks.
+ 
+
+\subsection{Physical security} 
+Perhaps the most significant threat to wind farm is physical access to wind turbines and substations that enables an attacker to target the operations and transmission control networks. As mentioned above, existing physical security mechanisms are relatively weak, and the turbines and substations are typically sanctioned at remote locations. Efforts should be made to outfit every turbine with strong locking mechanisms with multifactor authentication, motion sensors, security cameras and remote alarm notifications system. Additionally, management should assign security personnel who are always ready to respond in a timely manner. Substations are very important components of a wind farm physical breaches of substations can be leveraged to wreak havoc on electricity generation and transmission assets. In addition to locking mechanisms, motion sensors, security cameras and remote alarms, substations should be fortified to the extent possible to defeat breaches of doors, windows, walls and roofs
  
 \subsection{Network breach}
- \subsubsection{Windshark}
- \lipsum[1]
- \subsubsection{Windpoison}
- \lipsum[1]
- \subsubsection{Others}
- \textbf{Black Box}
- \lipsum[1]
- 
-\subsection{Ransom}
- \subsubsection{Bitcoin}
- \lipsum[1]
- \subsubsection{Operation}
  \lipsum[1]
 
 
 
-\section{Chapter 4 : Attack Mitigation }
+%\section{Chapter 4 : Attack Mitigation }
 
-\subsection{Introduction}
- \textbf{Talk about the risk which we can prevent}
- \lipsum[1]
+%\subsection{Introduction}
+% \textbf{Talk about the risk which we can prevent}
+% \lipsum[1]
 
 
 
-\subsection{Physical Access}
-derpderp
- \subsubsection{Access Control}
- \lipsum[1]
+%\subsection{Physical Access}
+%derpde
+% \subsubsection{Access Control}
+% \lipsum[1]
 
- \subsubsection{Locking System}
- Und noch etwas Text... \cite{muster} \newline
- \lipsum[1]
- \subsubsection{Quick Response}
- \lipsum[1]
+ %\subsubsection{Locking System}
+ %Und noch etwas Text... \cite{muster} \newline
+ %\lipsum[1]
+ %\subsubsection{Quick Response}
+ %\lipsum[1]
 
  
-\subsection{Network Mitigation}
- \subsubsection{SSL/TLS}
- \lipsum[1]
- \subsubsection{VPN}
- \lipsum[1]
- \subsubsection{Access restriction}
- \textbf{White List}
- \lipsum[1]
+%\subsection{Network Mitigation}
+% \subsubsection{SSL/TLS}
+% \lipsum[1]
+% \subsubsection{VPN}
+% \lipsum[1]
+% \subsubsection{Access restriction}
+% \textbf{White List}
+% \lipsum[1]
  
-\subsection{Best Practice}
- \lipsum[2]
+%\subsection{Best Practice}
+% \lipsum[2]
 
  
  
