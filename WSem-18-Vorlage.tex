@@ -196,11 +196,57 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
   			http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4694219
   		
   	\end{description}
-  \subsubsection{SOAP based web services}
-  	NOTE: check the security of these services, research vulnerability issues about these services. So have in mind the security of these services besides the general point.
-  	
-  	check : http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4558422
-  	http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=991449
+  \subsubsection{SOAP web services}  	
+   Web services are software applications which can be described, located, published and invoked over the network. They are said to be loosely coupled because the client invoking the web service doesn't have to know about the implementation details of the service itself, it just has to know the available methods which can be called on the service and the format which it can understand, then it can send requests to the service and the service will respond to it. SOAP web services are comprised of several technologies and protocols in order to be able to transform and transport the data from a client to a web service in a standard way. Some of the most important ones are the following:
+   
+   \begin{description}
+   	\item[$\bullet$] 
+   	UDDI(Universal Description, Discovery and Integration): it is used for storing and categorizing web service interfaces.
+   	\item[$\bullet$]
+   	WSDL(Web Service Description Language): defines the interface, data and message types, interactions and protocols.
+   	\item[$\bullet$]
+   	SOAP(Simple Object Access Protocol): it is an XML-based messaging protocol for exchanging information.
+   	\item[$\bullet$]
+   	HTTP(Hypertext Transfer Protocol): messages between the different parts involved are exchanged using the HTTP transport protocol.
+   	\item[$\bullet$]
+   	XML(Extensible Markup Language): is the basic foundation on which web services are built and defined.
+   \end{description} 
+  	IEC 61400-25 defines a communication model for monitoring and controlling of wind power plants, and this model is comprised of three parts:
+  	\begin{enumerate}
+  		\item Wind power-plant information model
+  		\item Information exchange model
+  		\item Mapping the wind power-plant information model and the information exchange model to standard communication profiles. For mapping to web services the information exchange between SCADA systems and wind power-plants is done with SOAP messages.
+  	\end{enumerate}	
+  	\includegraphics[scale=0.65]{IECProtocol.png}
+  	\textit{Fig.1 Communication model for wind power plants defined in IEC 61400-25.} \newline
+  	\textbf{Security requirements}.\newline
+  	The information exchange model provides services that are grouped as operational functions and management functions. The security requirements of these two functions include:
+  	\begin{enumerate}
+  		\item \textit{authentication}: determining the identity of the user;
+  		\item \textit{authorization}: ensure that the entity has the correct access;
+  		\item \textit{integrity}: messages are protected against unauthorized modification;
+  		\item \textit{confidentiality}: objects of the wind power-plant information model are protected and only disclosed to the right users;
+  		\item \textit{non repudiation}: preventing a user involved in a data exchange from denying that it participated in the exchange;
+  		\item \textit{prevention of denial of service}: preventing a client/server from blocking access to authorized users.
+  	\end{enumerate}	
+  	In Fig.1 we can see that the communication process of wind power plants can be broken in three steps:
+  	\begin{enumerate}
+  		\item \textit{associate};
+  		\item \textit{data exchange};
+  		\item \textit{release}.
+  	\end{enumerate}
+  	Each of these steps has different security requirements, as listed in Fig.2.	
+  	\includegraphics[scale=0.65]{securityRequirements.png}
+  	\textit{Fig.2 Security requirements of different communication steps.} \newline	
+  	\textbf{Web service security and commonly used security tokens for electric power utilities}. \newline
+  	WS security is an extension to SOAP to apply security to web services and it was published by OASIS. A security token is used in addition to or in place of a password. It acts like an electronic key to access something. The security tokens most commonly used in electric power utilities are:
+  	\begin{enumerate}
+  		\item \textit{User ID/Password credentials}: a widely used authentication function but not very secure.
+  		\item \textit{X.509 certificates}: uses the public key cryptography to solve authentication, integrity, confidentiality and nonrepudiation. There is one downside and that is, the applications must be deployed on the support of the public key infrastructure(PKI) which needs more investments. 
+  	\end{enumerate}
+  	TODO: Add references: 
+  	http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4558422
+  	https://link.springer.com/chapter/10.1007/978-1-4302-1955-2_14
   \subsubsection{OPC XML-DA services}	
    	NOTE: check the security of these services, research vulnerability issues about these services. So have in mind the security of these services besides the general point.
    	
