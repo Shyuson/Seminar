@@ -157,7 +157,7 @@
 \subsection{Anatomy of a Wind Turbine}
  \subsubsection{Rotors and Blades}
  Und noch etwas Text... \cite{muster} \newline
- The rotor is the element that captures energy from the wind. The efficiency depends on the number of the blades in the rotor, their shape, their length and the speed at which the rotor turns. The modern blades have a similar shape to an airplane wing and therefore the shape creates lift as the wind passes over it. The blade length depends on the size of the turbine, on the specific blade design and on the site where it is going to generate power from the wind. Typically a 3 MW wind turbine might have a 45m blade at one site where the wind regime is very good and 55m blade to produce the same amount of energy at a different site. The tip speed ratio determines the speed at which a wind turbine rotor turns. It should be an optimum so that each blade should pass through the air and the turbulence it creates should have dissipated before the next blade arrives in the same position.
+ The rotor is the element that captures energy from the wind. The efficiency depends on the number of the blades in the rotor, their shape, their length and the speed at which the rotor turns. The tip speed ratio determines the speed at which a wind turbine rotor turns. It should be an optimum so that each blade should pass through the air and the turbulence it creates should have dissipated before the next blade arrives in the same position.
  TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze.
 \subsubsection{The Drive Train, Nacelles and Towers}
 \begin{description}
@@ -174,43 +174,7 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
 \section{Chapter 2 : Wind Farm Infrastructure }
  \subsection{Wind farm communication infrastructure}
   \subsubsection{Overview of IEC-61400-25 standard}
-  	The IEC-61400-25 standard was developed because different Wind Power Plant(WPP) technologies from different manufacturers resulted in technical, implementation and maintenance difficulties. The focus of this standard is on the communication between power plant components like wind turbines and actors like SCADA systems. A SCADA (Supervisory control and data acquisition) system is a software system that is used for controlling, monitoring and analyzing a process. This software communicates with the controller that is running the actual process. Typically these controllers would be PLC(Programmable Logic Controllers) or RTU(Remote Control Unit). The SCADA system gathers real time information from these controllers and brings them to the system where they are presented in a Graphical User Interface to the operators that are running the process. The IEC-61400-25 standard is comprised of six parts, namely: 
-  	\begin{description}
-  		\item[$\bullet$] 
-  			\textit{Part 1- Overall description of principles and models:} provides an overview of the standard, defines some of the terminology used in the following parts and outlines the underlying modeling concept.
-  		\item[$\bullet$] 
-  			\textit{Part 2 - Information models:} introduces and defines the data objects which are referred to as logical nodes, specific to a wind turbine communication.
-  		\item[$\bullet$] 
-  			\textit{Part 3 - Information exchange models:} describes the required mechanisms and protocols of data exchange, like authenticating a client, sending a control command or accessing the self-description of a device.
-  		\item[$\bullet$] 
-  			 \textit{Part 4 - Mapping to communication profiles:} defines the message format of the individual data exchange transactions. The already existing mappings are web services, IEC-61850-8-1 MMS, OPC XML DA, IEC 60870-5-104, and DNP3. 	
-  		\item[$\bullet$]	
-  		 	 \textit{Part 5 - Conformance testing:} specifies standardized procedures for verifying that a given implementation adheres to the standard.
-  		\item[$\bullet$]	
-  			\textit{Part 6 - Logical node classes and data classes for condition monitoring:} extends the defined name spaces with logical nodes and possibly new data classes for condition monitoring.
-  			
-  			TODO: Add References->
-  		
-  			https://pdfs.semanticscholar.org/3522/1c7994907b073f1b2401c610792336a0df7b.pdf.
-  		
-  			http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4694219
-  		
-  	\end{description}
-  \subsubsection{SOAP web services}  	
-   Web services are software applications which can be described, located, published and invoked over the network. They are said to be loosely coupled because the client invoking the web service doesn't have to know about the implementation details of the service itself, it just has to know the available methods which can be called on the service and the format which it can understand, then it can send requests to the service and the service will respond to it. SOAP web services are comprised of several technologies and protocols in order to be able to transform and transport the data from a client to a web service in a standard way. Some of the most important ones are the following:
-   
-   \begin{description}
-   	\item[$\bullet$] 
-   	UDDI(Universal Description, Discovery and Integration): it is used for storing and categorizing web service interfaces.
-   	\item[$\bullet$]
-   	WSDL(Web Service Description Language): defines the interface, data and message types, interactions and protocols.
-   	\item[$\bullet$]
-   	SOAP(Simple Object Access Protocol): it is an XML-based messaging protocol for exchanging information.
-   	\item[$\bullet$]
-   	HTTP(Hypertext Transfer Protocol): messages between the different parts involved are exchanged using the HTTP transport protocol.
-   	\item[$\bullet$]
-   	XML(Extensible Markup Language): is the basic foundation on which web services are built and defined.
-   \end{description} 
+  	The IEC-61400-25 standard was developed because different Wind Power Plant(WPP) technologies from different manufacturers resulted in technical, implementation and maintenance difficulties. The focus of this standard is on the communication between power plant components like wind turbines and actors like SCADA systems. A SCADA (Supervisory control and data acquisition) system is a software system that is used for controlling, monitoring and analyzing a process. This software communicates with the controller that is running the actual process. Typically these controllers would be PLC(Programmable Logic Controllers) or RTU(Remote Control Unit). The SCADA system gathers real time information from these controllers and brings them to the system where they are presented in a Graphical User Interface to the operators that are running the process.\newline
   	IEC 61400-25 defines a communication model for monitoring and controlling of wind power plants, and this model is comprised of three parts:
   	\begin{enumerate}
   		\item Wind power-plant information model
@@ -219,7 +183,7 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
   	\end{enumerate}	
   	\includegraphics[scale=0.65]{IECProtocol.png}
   	\textit{Fig.1 Communication model for wind power plants defined in IEC 61400-25.} \newline
-  	\textbf{Security requirements}.\newline
+  	\subsubsection{Security requirements}
   	The information exchange model provides services that are grouped as operational functions and management functions. The security requirements of these two functions include:
   	\begin{enumerate}
   		\item \textit{authentication}: determining the identity of the user;
@@ -238,19 +202,79 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
   	Each of these steps has different security requirements, as listed in Fig.2.	
   	\includegraphics[scale=0.65]{securityRequirements.png}
   	\textit{Fig.2 Security requirements of different communication steps.} \newline	
-  	\textbf{Web service security and commonly used security tokens for electric power utilities}. \newline
+  	\subsubsection{SOAP web services and security}
+  	 Web services are software applications which can be described, located, published and invoked over the network. They are loosely coupled because the client invoking the web service doesn't have to know about the implementation details of the service itself, it just has to know the available methods which can be called on the service and the format which it can understand. SOAP web services are comprised of several technologies and protocols in order to be able to transform and transport the data from a client to a web service in a standard way. Some of the most important ones are the following:
+  	\begin{description}
+  		\item[$\bullet$] 
+  		UDDI(Universal Description, Discovery and Integration): it is used for storing and categorizing web service interfaces.
+  		\item[$\bullet$]
+  		WSDL(Web Service Description Language): defines the interface, data and message types, interactions and protocols.
+  		\item[$\bullet$]
+  		SOAP(Simple Object Access Protocol): it is an XML-based messaging protocol for exchanging information.
+  		\item[$\bullet$]
+  		HTTP(Hypertext Transfer Protocol): messages between the different parts involved are exchanged using the HTTP transport protocol.
+  		\item[$\bullet$]
+  		XML(Extensible Markup Language): is the basic foundation on which web services are built and defined.
+  	\end{description} 	
   	WS security is an extension to SOAP to apply security to web services and it was published by OASIS. A security token is used in addition to or in place of a password. It acts like an electronic key to access something. The security tokens most commonly used in electric power utilities are:
   	\begin{enumerate}
   		\item \textit{User ID/Password credentials}: a widely used authentication function but not very secure.
   		\item \textit{X.509 certificates}: uses the public key cryptography to solve authentication, integrity, confidentiality and nonrepudiation. There is one downside and that is, the applications must be deployed on the support of the public key infrastructure(PKI) which needs more investments. 
   	\end{enumerate}
-  	TODO: Add references: 
-  	http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4558422
-  	https://link.springer.com/chapter/10.1007/978-1-4302-1955-2_14
-  \subsubsection{OPC XML-DA services}	
-   	NOTE: check the security of these services, research vulnerability issues about these services. So have in mind the security of these services besides the general point.
-   	
-   	check: http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4020022
+  	References: 
+  	http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4558422,
+  	https://link.springer.com/chapter/10.1007/978-1-4302-1955-2\_14e
+  \subsubsection{OPC XML-DA specification}	
+   	XML is a markup language which is used to describe and exchange structured information between different applications. It is platform-independent and therefor it is available across all operating systems. These facts made the OPC foundation release the OPC XML-DA specifications, with the aim of allowing the XML applications to access OPC data in a standardized way. OPC XML-DA passes data as SOAP messages over the Internet and because they are SOAP messages they can pass around the firewall. This helped to overcome the communication limitations in the OPC DA specification, because in OPC DA the applications on different Windows machines communicate using RPC (Remote Procedure Call) and DCOM (Distributed Component Object Model). The limitations here are as follows:
+   	\begin{description}
+   	\item[$\bullet$]
+   	RPC traffic is typically blocked by all firewalls and proxy servers.
+   	\item[$\bullet$]
+   	DCOM is typically bound to Microsoft operating systems.
+   \end{description}
+	
+   The OPC XML-DA data model is based on OPC Items that are named and organized in a hierarchy. Each item stores a single value and is defined by a combination of the item path and item name. The possible data types are simple type, enumeration or arrays and we can access the items using \textit{read} and \textit{write} operations. To optimize periodic reads of the same items a subscription mechanism is provided.
+	\subsubsection{OPC XML-DA server schema}
+	The XML-DA server communicates with the client and allows real time sharing and interchange of data from different devices of a wide range of platforms. The design of the OPC XML-DA server is shown in the following picture.\newline
+	\begin{center}
+	\includegraphics[scale=0.65]{XML-DA-server.png}
+	\end{center}
+	\begin{center}
+	\textit{Fig.2 OPC XML-DA server structure.}
+	\end{center}
+	Remote monitoring module is used for network communication and message serialization. When receiving a request, it will create a new thread to deal with this connection request and the main thread will immediately return to monitor the next connection request. The new thread will call the HTTP message module to parse the HTTP POST request, check out the SOAP message body and give it to the message processing module. Then this thread uses SOAP as an envelope to pass the result which is returned by the message processing module to the client using HTTP.\newline
+	The message processing module is used for parsing the message sent by the client to SOAP, creates a request object which is defined in the OPC XML-DA schema and passes it to the service delivery module. Then it waits for a response from the service delivery module and uses XML format as an envelope for passing the message to the remote monitoring module.\newline
+	The service delivery module includes eight services defined in the OPC XML-DA specification. These services include: Get status, Read, Write, Subscribe, SubscriptionPolledRefresh, SubscriptionCancel, Browse and GetProperties. Each specific service has a request and response parameter. This service will call the appropriate function in the OPC DA interface module and then the response object will be created and returned to the message processing module.\newline
+	The OPC DA intertface contains the functions of the server, data management and internal services. 
+	\subsubsection{OPC security}
+	The assumption that OPC XML-DA makes is that the transport will handle security. In the past, many companies have chosen to adopt a \textit{wide-open} security policy for OPC servers and have relied on firewalls to protect from intruders. When web services came to play, process control information was no longer restricted to LAN, because web services are frequently deployed outside the firewall and potentially exposing important information to everyone who has access to the Internet. \newline
+	Unrestricted read access to the data is not a big problem but write access must be restricted because some intruder might write incorrect data which can cause different problems. Therefor it is recommended that vendors provide a means to globally disable the server's \textit{write} access and put it to \textit{read-only} mode.\newline
+	The OPC security specifications consists of a set of conditions regarding how to secure OPC server applications, OPC client applications and any other vendor-specific security objects implemented by the OPC server. The vendor-specific security objects are server interfaces, methods and individual or set of data items. Each security object has an associated reference monitor which provides authentication for the clients to access that object. OPC security specification deals with two reference monitors for secured objects, namely:
+	\begin{description}
+	\item[$\bullet$]
+	Windows NT reference monitor: controls access to DCOM server and clients. It validates the credentials of the clients requesting to connect to the DCOM servers and only after successful validation it provides authorization to connect.
+	\item[$\bullet$]
+	OPC server: is implemented to validate the credentials of the client and make the decision of providing access to its secured objects. The OPC server implements on of these levels of security: \newline
+	1. Disabled security: no security is enforced. The server starts and every client can connect to it and access its data.\newline
+	2. DCOM security: the access to the OPC server is controlled by the Windows NT DCOM security.\newline
+	3. OPC security: the server serves as the reference monitor to control access to its secured objects.
+	\end{description}
+	
+	\textbf{References:} \newline
+	http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4020022\&tag=1 \newline
+	
+	https://ac.els-cdn.com/S1876610212002500/1-s2.0-S1876610212002500-main.pdf?\_tid=c1dc34d2-e41e-11e7-a91c-00000aab0f6b\&acdnat=1513620821\_4aab5851aa74825cdd849f19da59dcbf 
+	\newline
+	
+	Industrial Process Automation Systems by Y. Jaganmohan Reddy, B.R. Mehta
+	\newline
+	
+	http://www.diit.unict.it/users/scava/dispense/II/OPCDataAccessXMLSpecification.pdf
+	\newline
+	
+	Renewable Energy: Selected Issues Volume I, Volume 1
+	edited by Manuel Pérez-Donsión, Silvano Vergura, Gianpaolo Vitale
+	
  \subsection{Wind farm power infrastructure}
   \lipsum[1]
 
