@@ -381,10 +381,21 @@ Once inside the turbine, an attacker could access the wind farm control network 
 Perhaps the most significant threat to wind farm is physical access to wind turbines and substations that enables an attacker to target the operations and transmission control networks. As mentioned above, existing physical security mechanisms are relatively weak, and the turbines and substations are typically sanctioned at remote locations. Efforts should be made to outfit every turbine with strong locking mechanisms with multifactor authentication, motion sensors, security cameras and remote alarm notifications system. Additionally, management should assign security personnel who are always ready to respond in a timely manner. Substations are very important components of a wind farm physical breaches of substations can be leveraged to wreak havoc on electricity generation and transmission assets. In addition to locking mechanisms, motion sensors, security cameras and remote alarms, substations should be fortified to the extent possible to defeat breaches of doors, windows, walls and roofs
  
 \subsection{Network breach}
- \lipsum[1]
+
+\subsubsection{WindPoison}
+The Windpoison’s concept is to intercept all communication betweene the windfarm and the controller. They use the ARP Cache poisonning attack. The Address Resolution Protocol (ARP) is a communications protocol used for discovering the MAC address associated with a given IPv4 address. It is a critical function in Internet Protocol (IP) computer networks because theses adresses is obligate for know who is receiver of a message. \newline Since ARP replies are not authenticated, an attacker can send an ARP reply containing a malicious <IP, MAC> association to any host on the network thus poisoning the ARP cache of that host. The attacker may supply her MAC address in the sent malicious association which enables her to receive all the packets sent by that host to the IP address specified in the association. This way the attacker may receive all the
+frames originally directed to some other host. If also the cache of the real destination host is poisoned, both communication flows are under the attacker's control. In this situation, the attacker could launch a man in the middle, where she can forward the received packets to the correct destination after inspecting and possibly modifying them. 
+
+\end{multicols}
+\includegraphics{cache_poison}
+\begin{multicols}{2}
 
 
 
+\subsubsection{WindShark}
+
+The WindShark’s concept is designed to replay and fabricate OPC control messages that are normally issued by an operator station in a wind farm. In fact, Windshark was specifically created to demonstrate the ease with which the operation of a wind turbine could be manipulated by a malicious entity. Windshark transmits OPC-XML-DA write request messages [20] to the target turbine to 
+change its operating state.
 %\section{Chapter 4 : Attack Mitigation }
 
 %\subsection{Introduction}
