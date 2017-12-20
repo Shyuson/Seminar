@@ -356,7 +356,8 @@ complete anonymous. That's why is used
     \item	No network segmentation between wind turbines
     \item	No physical security
  \end{itemize}
- Let's talk about some specific attack in the following chapter.
+ Let's talk about some specific attack in the following chapter. The first things an attacker must do is to enter in the network of Windfarm. Each network devices have an IP but they didn't have an online connection. They always have a private IP. They can't go to the outside and the outside can't communicate with the device. That's why an attacker must enter into the internal network. For that he have many possibilities. Once the attacker enters into the network, he can choose several targets. Each target has a specific role in the network structure. According to what he wants to do, the target, the methods and the dommage can be different in each case.
+ 
 
 
 \subsection{Physical Attack}
@@ -380,22 +381,46 @@ Once inside the turbine, an attacker could access the wind farm control network 
 \subsection{Physical security} 
 Perhaps the most significant threat to wind farm is physical access to wind turbines and substations that enables an attacker to target the operations and transmission control networks. As mentioned above, existing physical security mechanisms are relatively weak, and the turbines and substations are typically sanctioned at remote locations. Efforts should be made to outfit every turbine with strong locking mechanisms with multifactor authentication, motion sensors, security cameras and remote alarm notifications system. Additionally, management should assign security personnel who are always ready to respond in a timely manner. Substations are very important components of a wind farm physical breaches of substations can be leveraged to wreak havoc on electricity generation and transmission assets. In addition to locking mechanisms, motion sensors, security cameras and remote alarms, substations should be fortified to the extent possible to defeat breaches of doors, windows, walls and roofs
  
-\subsection{Network breach}
-
-\subsubsection{WindPoison}
-The Windpoison’s concept is to intercept all communication betweene the windfarm and the controller. They use the ARP Cache poisonning attack. The Address Resolution Protocol (ARP) is a communications protocol used for discovering the MAC address associated with a given IPv4 address. It is a critical function in Internet Protocol (IP) computer networks because theses adresses is obligate for know who is receiver of a message. \newline Since ARP replies are not authenticated, an attacker can send an ARP reply containing a malicious <IP, MAC> association to any host on the network thus poisoning the ARP cache of that host. The attacker may supply her MAC address in the sent malicious association which enables her to receive all the packets sent by that host to the IP address specified in the association. This way the attacker may receive all the
-frames originally directed to some other host. If also the cache of the real destination host is poisoned, both communication flows are under the attacker's control. In this situation, the attacker could launch a man in the middle, where she can forward the received packets to the correct destination after inspecting and possibly modifying them. 
-
+ 
 \end{multicols}
 \includegraphics{cache_poison}
 \begin{multicols}{2}
+\subsection{Network breach}
 
+\subsubsection{WindPoison}
+The Windpoison’s concept is to intercept all communication between the wind farm and the controller. They use the ARP Cache poisonning attack. The Address Resolution Protocol (ARP) is a communications protocol used for discovering the MAC address associated with a given IPv4 address. It is a critical function in Internet Protocol (IP) computer networks because theses adresses is obligate for know who is receiver of a message. \newline Since ARP replies are not authenticated, an attacker can send an ARP reply containing a malicious <IP, MAC> association to any host on the network thus poisoning the ARP cache of that host. The attacker may supply her MAC address in the sent malicious association which enables her to receive all the packets sent by that host to the IP address specified in the association. This way the attacker may receive all the frames originally directed to some other host. If also the cache of the real destination host is poisoned, both communication flows are under the attacker's control. \newline
+In this situation, the attacker could launch a man-in-the middle. A man-in-the-middle attack (MITM) is an attack where the attacker secretly relays and change the content of message between wind turbine and OPC client. When an OPC client sends a request, a falsified answer is responding to the OPC client and a wrong request is sending to the wind turbine.  They believe they are directly communicating with each other but in the fact the attacker has gained the control of the system. 
 
 
 \subsubsection{WindShark}
+A others way to gain the control of wind turbine is to inject some malicious request at the right time in the right place. First of all we need a tools to fabricate OPC control messages that are normally issued by an operator station in a wind farm. Then the goal is to replay these OPC requesst to the wind turbine. Since the message come from the attacker, he can do what he want. It's the concept of the WindShark. With Windshark, we can demonstrate the ease with which the operation of a wind turbine could be manipulated by a malicious entity. Windshark transmits OPC-XML-DA write request messages to the target turbine at the right times to gain the control of the wind turbine. That is when the write access is obtained. \newline
+A typical use case involves Windshark being installed in a rogue device that is connected to the operations control system. After performing network controls to identify an accessible wind turbine, the attacker can starting to excute his malicious request. A more sophisticated technique involves the use of the computer worm concept to maliciously control a wind turbine.The idea is to load a malicious program and there aren't a physical things like a roght device. The program could modify the control logic, change process control variables and setpoints, and issue unauthorized control commands to slave programmable logic controllers in the nacelle or rotor. The computer worm could also be designed to propagate to programmable automation controllers in other wind turbines, potentially impacting an entire wind farm.
 
-The WindShark’s concept is designed to replay and fabricate OPC control messages that are normally issued by an operator station in a wind farm. In fact, Windshark was specifically created to demonstrate the ease with which the operation of a wind turbine could be manipulated by a malicious entity. Windshark transmits OPC-XML-DA write request messages [20] to the target turbine to 
-change its operating state.
+
+\includegraphics[scale=0.5]{Windshark}
+
+	
+\subsection{Mitigation}
+
+\subsubsection{Internal firewall}
+The flat logical design of the operations control network and inadequate or non-existent network access controls were leveraged in all the attack scenarios described above. A improvement solution is to isolate turbines, especially since there appears to be no operational requirement for turbine-to-turbine communications. And we can avoid contaminating  others wind turbine if one turbine is getting caught by an attacker. Wind turbine isolation can be implemented in the operations control network by retrofitting a internal firewall. and they can add/create tunnel at each turbine. It avoid a broadcast message. One wind turbine received only the message that concern him. 
+\includegraphics[scale=0.8]{internalfirewall}
+\newline
+The first isolation solution is to use inline firewalls with strict IP-based rule sets that prevent inter-turbine communications by default. A whitelist rules set can be better if the IP of each device doesn't change. A whitelist is a list or register of entities that provide a particular privilege, service, access or recognition. Entities on the list will be approved. And all the others will be rejected. Whitelisting can be better to blacklisting because we cann't list all vulnerability. Everyday new security breach was discovered.
+\includegraphics[scale=0.85]{vpn}
+\newline
+A more sophisticated and secure strategy for isolating turbines is to implement a “bump-in-the-wire” solution that provides end-to-end encryption for each turbine. This solution, which is presented in Fig. 11 , involves a dedicated VPN connection from each turbine to a substation (using a public key infrastructure with a unique key pair 
+for each turbine). This tunnels all operations control network communications over encrypted links. Unless the VPN server or key management process is compromised, an attacker would be unable to communicate with a turbine control system. 
+
+
+\subsubsection{message encryption}
+In several cases, insecure OPC server implementations were identified during the security assessments of wind farms conducted by the authors of this paper (e.g., no encryption or authentication). In many instances, OPC-XML-DA was used to poll and set wind turbine data and control parameters from remote operator stations. The implementation of such a web-based protocol should adhere to the guidance provided by IEC 61400-25; for example, the protocol should be implemented over SSL/TLS in order to combat the attacks described in this paper.
+\newline Transport Layer Security (TLS).- and its predecessor, Secure Sockets Layer (SSL), are cryptographic protocols that provide communications security over a computer network. The Transport Layer Security protocol aims primarily to provide privacy and data integrity between two communicating computer applications.The TLS connections have one or more of the following properties:
+\begin{itemize}
+	\item The connection is private (or secure) because symmetric cryptography is used to encrypt the data transmitted. The keys for this symmetric encryption are generated uniquely for each connection and are based on a shared secret negotiated at the start of the session. The server and client negotiate the details of which encryption algorithm and cryptographic keys to use before the first byte of data is transmitted. The negotiation of a shared secret is both secure and reliable.
+	\item The identity of the communicating parties can be authenticated using public-key cryptography. This authentication can be made optional, but is generally required for at least one of the parties .
+	\item The connection ensures integrity because each message transmitted includes a message integrity check using a message authentication code to prevent undetected loss or alteration of the data during transmission
+\end{itemize}
 %\section{Chapter 4 : Attack Mitigation }
 
 %\subsection{Introduction}
