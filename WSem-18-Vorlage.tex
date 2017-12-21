@@ -80,16 +80,16 @@
                  \normalsize	Matr.nr: 3080216\\
                  \normalsize
                  \href{mailto:autor2@stud.oth-regensburg.de}
-                 {autor2@stud.oth-regensburg.de}      
+                 {celestin.mouangue@st.oth-regensburg.de}      
          \end{center}
        \end{minipage}
        \begin{minipage}[t]{0.33\linewidth}
          \begin{center}
            	\textsc{Zhong XU}\\[2mm]
-                 \normalsize	Matr.nr: 123456\\
+                 \normalsize	Matr.nr: 3148136\\
                  \normalsize
                  \href{mailto:autor3@stud.oth-regensburg.de}
-                 {autor3@stud.oth-regensburg.de}      
+                 {zhong.xu@st.oth-regensburg.de}      
          \end{center}
        \end{minipage}
      }
@@ -115,7 +115,7 @@
 
 \section{Chapter 1 : General Introduction}
 
-\cite{author = {Trevor M. Letcher}, title = {Wind Energy Engineering}, journal = {Derp}, year = {2015}, volume = {1}, pages = {567},}
+%\cite{author = {Trevor M. Letcher}, title = {Wind Energy Engineering}, journal = \\{Derp}, year = {2015}, volume = {1}, pages = {567},}
  \subsection{Why Wind Energy?}
  \subsubsection{Climate Change}
  Today we are threatened by global warming and climate change and therefore the energy industry should try to find energy sources free of carbon dioxide pollution and one of the options is generating electricity from wind energy. Wind and solar energy produce only 4\% of the global supply of electricity while coal, the worst fossil fuel polluter, is still the main energy source for generating electricity. So, producing electricity from wind is where we should be working towards in order to avoid any other environmentally unfriendly material for producing electricity. Hopefully with mass production and bigger and more efficient wind turbines, wind energy and other renewable forms of energy will become cheaper and more convenient to use than fossil fuel and therefore become the main source of producing energy.
@@ -156,7 +156,7 @@
 
 \subsection{Anatomy of a Wind Turbine}
  \subsubsection{Rotors and Blades}
- Und noch etwas Text... \cite{muster} \newline
+ %Und noch etwas Text... \cite{muster} \newline
  The rotor is the element that captures energy from the wind. The efficiency depends on the number of the blades in the rotor, their shape, their length and the speed at which the rotor turns. The tip speed ratio determines the speed at which a wind turbine rotor turns. It should be an optimum so that each blade should pass through the air and the turbulence it creates should have dissipated before the next blade arrives in the same position.
  TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze.
 \subsubsection{The Drive Train, Nacelles and Towers}
@@ -221,9 +221,7 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
   		\item \textit{User ID/Password credentials}: a widely used authentication function but not very secure.
   		\item \textit{X.509 certificates}: uses the public key cryptography to solve authentication, integrity, confidentiality and nonrepudiation. There is one downside and that is, the applications must be deployed on the support of the public key infrastructure(PKI) which needs more investments. 
   	\end{enumerate}
-  	References: 
-  	http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4558422,
-  	https://link.springer.com/chapter/10.1007/978-1-4302-1955-2\_14e
+  	
   \subsubsection{OPC XML-DA specification}	
    	XML is a markup language which is used to describe and exchange structured information between different applications. It is platform-independent and therefor it is available across all operating systems. These facts made the OPC foundation release the OPC XML-DA specifications, with the aim of allowing the XML applications to access OPC data in a standardized way. OPC XML-DA passes data as SOAP messages over the Internet and because they are SOAP messages they can pass around the firewall. This helped to overcome the communication limitations in the OPC DA specification, because in OPC DA the applications on different Windows machines communicate using RPC (Remote Procedure Call) and DCOM (Distributed Component Object Model). The limitations here are as follows:
    	\begin{description}
@@ -240,7 +238,7 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
 	\includegraphics[scale=0.65]{XML-DA-server.png}
 	\end{center}
 	\begin{center}
-	\textit{Fig.2 OPC XML-DA server structure.}
+	\textit{Fig.3 OPC XML-DA server structure.}
 	\end{center}
 	Remote monitoring module is used for network communication and message serialization. When receiving a request, it will create a new thread to deal with this connection request and the main thread will immediately return to monitor the next connection request. The new thread will call the HTTP message module to parse the HTTP POST request, check out the SOAP message body and give it to the message processing module. Then this thread uses SOAP as an envelope to pass the result which is returned by the message processing module to the client using HTTP.\newline
 	The message processing module is used for parsing the message sent by the client to SOAP, creates a request object which is defined in the OPC XML-DA schema and passes it to the service delivery module. Then it waits for a response from the service delivery module and uses XML format as an envelope for passing the message to the remote monitoring module.\newline
@@ -260,26 +258,18 @@ TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind P
 	3. OPC security: the server serves as the reference monitor to control access to its secured objects.
 	\end{description}
 	
-	\textbf{References:} \newline
-	http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4020022\&tag=1 \newline
-	
-	https://ac.els-cdn.com/S1876610212002500/1-s2.0-S1876610212002500-main.pdf?\_tid=c1dc34d2-e41e-11e7-a91c-00000aab0f6b\&acdnat=1513620821\_4aab5851aa74825cdd849f19da59dcbf 
-	\newline
-	
-	Industrial Process Automation Systems by Y. Jaganmohan Reddy, B.R. Mehta
-	\newline
-	
-	http://www.diit.unict.it/users/scava/dispense/II/OPCDataAccessXMLSpecification.pdf
-	\newline
-	
-	Renewable Energy: Selected Issues Volume I, Volume 1
-	edited by Manuel Pérez-Donsión, Silvano Vergura, Gianpaolo Vitale
-	
  \subsection{Wind farm power infrastructure}
   A wind farm is not just a collection of unrelated individual turbines. Rather, wind farms have their own system of electrical distribution, with connections to all turbines on the farm. Wind farm incorporate many components to ensure the safe, efficient and reliable generation, transmission and injection of electricity into the power grid. From the perspective of functionality and security, a wind farm can be envisioned as having two interconnected, cooperative infrastructures. The IEC international standard defined uniform design, operation and communications requirements for wind turbine suppliers.
-\newline image ici \newline
 
-Fig 1 Presents a schematic diagram of a wind farm power infrastructure. Wind turbines in a wind farm convert rotational kinetic energy into electricity. \newline
+\end{multicols}
+\includegraphics[scale =0.45]{windfarm_infra}
+\begin{center}
+	\textit{Fig.4 Wind farm power infrastructure.}
+\end{center}
+
+\begin{multicols}{2}
+
+Figure 4 presents a schematic diagram of a wind farm power infrastructure. Wind turbines in a wind farm convert rotational kinetic energy into electricity. \newline
 The electrical collections system for the entire wind farm operates at a high voltage. The voltages for the entire farm are higher than the voltage at the individual turbine generators. The purpose of the higher voltage is to decrease resistive losses. As the wind-generated electricity travels to the grid, there is a loss of electricity due to resistance. The higher voltage compensates for the resistance loss. Additionally, the farm and the various turbines are equipped with a switch.
  \subsubsection{Control, Monitoring and Data collection}
  Supervisory control and data acquisition (SCADA) system control individual turbines while also displaying and reporting information on overall wind farm operation. The wind farm operator can choose to display information about any combination of operating factors.\newline
@@ -288,12 +278,14 @@ The electrical collections system for the entire wind farm operates at a high vo
  \subsubsection{DNP3 (Distributed Network Protocol)}
  DNP3 is a set of communications protocols used between components in process automation systems. Its main use is in utilities such as electric and water companies. Usage in other industries is not common. It was developed for communications between several types of data acquisition and control equipment. It plays a crucial role in SCADA systems, where it is used by SCADA Master Stations (a.k.a. Control Centers), Remote Terminal Units (RTUs), and Intelligent Electronic Devices (IEDs). It is primarily used for communications between a master station and RTUs or IEDs. ICCP, the Inter-Control Center Communications Protocol (a part of IEC 60870-6), is used for inter-master station communications. Competing standards include the older Modbus protocol and the newer IEC 61850 protocol.
  
+ \includegraphics[scale=0.8]{windturbine}
+ \begin{center}
+ 	\textit{Fig.5 Wind turbine}
+ \end{center}
  \subsubsection{wind turbine}
- Wind turbines are engineered to efficiently harness wind energy. The turbines, which translate wind energy to rotational energy, are prone to mechanical failure. A wind turbine incorporates many sensors that continuously monitor its mechanical components and the overall state of the turbine. The major physical elements of a turbine are connected and controlled through a combination of information technology and industrial control systems. Compromising the information technology and /or industrial control system can impact wind turbine operations, including potentially damaging or destroying an entire turbine
-\newline 
-image ici \newline 
-
-Figure 2 shows a schematic diagram of a wind turbine. A wind turbine has three main components: tower, nacelle, and rotor. The turbine tower is built on a concrete foundation. The nacelle, which sits on top of the tower, contains the major mechanical components of the wind turbine. The rotor blades, which are aerodynamically designed, are mounted on a hub; these are collectively referred to as the rotor. The rotor blades rotate about a horizontal axis; however, the nacelle/ rotor housing can be rotate about two axes (pitch and yaw) to enable the blades to catch the wind. The generator which is connected to the high-speed shaft, produces AC electricity. Some turbines convert AC to DC using a rectifier and convert the DC back to AC to match the frequency and phase pf the grid. The base of the tower, which is often hollow, contains the core network and programmable logic controller (PLC)-increasingly a programmable automation controller (PAC)-for the wind turbine, along with networking gear and control hardware and (sometimes) a human-machine interface for operators. The nacelle also houses a programmable logic controller that gathers data from various sensors and controls the various physical components housed at the top of the turbine tower. Note that a wind turbine is typically programmed to operate in an autonomous manner. In fact, most turbines can continue to generate and transmit power even when communications with the substation and /or control center are lost 
+ Wind turbines are engineered to efficiently harness wind energy. The turbines, which translate wind energy to rotational energy, are prone to mechanical failure. A wind turbine incorporates many sensors that continuously monitor its mechanical components and the overall state of the turbine. The major physical elements of a turbine are connected and controlled through a combination of information technology and industrial control systems. Compromising the information technology and /or industrial control system can impact wind turbine operations, including potentially damaging or destroying an entire turbine.\newline
+Figure 5 shows a schematic diagram of a wind turbine. A wind turbine has three main components: tower, nacelle, and rotor. The turbine tower is built on a concrete foundation. The nacelle, which sits on top of the tower, contains the major mechanical components of the wind turbine. The rotor blades, which are aerodynamically designed, are mounted on a hub; these are collectively referred to as the rotor. The rotor blades rotate about a horizontal axis; however, the nacelle/ rotor housing can be rotate about two axes (pitch and yaw) to enable the blades to catch the wind.
+\newline The generator which is connected to the high-speed shaft, produces AC electricity. Some turbines convert AC to DC using a rectifier and convert the DC back to AC to match the frequency and phase pf the grid. The base of the tower, which is often hollow, contains the core network and programmable logic controller (PLC)-increasingly a programmable automation controller (PAC)-for the wind turbine, along with networking gear and control hardware and (sometimes) a human-machine interface for operators. The nacelle also houses a programmable logic controller that gathers data from various sensors and controls the various physical components housed at the top of the turbine tower. Note that a wind turbine is typically programmed to operate in an autonomous manner. In fact, most turbines can continue to generate and transmit power even when communications with the substation and /or control center are lost 
   
 \section{Chapter 3 : Risk Management and Ransom } 
 \subsection{Introduction}
@@ -334,6 +326,9 @@ There are four stages of the security risk management process:
 \end{itemize}
 
 \includegraphics[scale=0.65]{security_management}
+\begin{center}
+	\textit{Fig.6 The role of the security risk assessment. Security risk assessments play a critical role in the security management process, providing information on the threats, assets, and risks to an organization.}
+\end{center}
 
 \textbf{Add some explication ont these parts.} 
  
@@ -377,7 +372,7 @@ complete anonymous. That's why is used
  
 
 
-\subsection{Physical Attack}
+\subsection{Network Access}
 Five distinct attack vectors are available to target a wind farm control network: cyber access using a wind farm vendor network; cyber access using technician equipment; and cyber via a compromised supply chain, and the most important part in our topic; physical access at a wind turbine, physical access at a substation.
  \subsubsection{Physical access at a wind turbine}
  Wind turbines are generally erected in remote locations with adequate wind speed duration. However, the physical security mechanisms that protect against unauthorized entry inside a wind turbine are fairly simplistic. Typically, the door to a turbine is secured by padlock that can be easily picked or bypassed using bolt cutters. Even if a turbine door has an expensive security mechanism that alert a control center about unauthorized entry, because of the remote location, it may take considerable time for responder to reach the turbine to investigate the unauthorized entry.
@@ -394,13 +389,11 @@ Once inside the turbine, an attacker could access the wind farm control network 
  \subsubsection{Cyber access using a wind farm vendor network}
  In many cases, wind farm vendors have unfettered remote virtual private network (VPN) access to wind farm control networks for monitoring, software upgrades and maintenance. This access may also be provided to vendors for research and development efforts, especially for evaluating product enhancements. Granting remote access to a wind farm vendor introduces risk and creates disturbing cyber attack environment. This is because the vendor network becomes a single point of access to multiple wind farm deployments, including wind farms belonging to other companies that rely on the vendors for products and services. An attacker could gain access to a vendor network in any number of ways, including via spear phishing campaigns, malicious insiders or physical breaches. After the vendors network is compromised, the attacker can leverage trust relationships to orchestrate attacks on multiple wind farms and their assets. During a security assessment of a wind farm conducted by authors of this paper, a vendor was observed to have remote access (from abroad) to the wind farm operations network. Standard network management protocols were utilized by the vendor, presumably for pushing software upgrades and performing diagnostics. Although the remote vendor communications were encrypted and tunneled over a VPN, the encapsulating protocols were outdated and unencrypted. This could enable a malicious entity to intercept, manipulate and fabricate messages, and launch a slew of attacks against wind turbines, substations and even win farm vendor networks.
  
-
-\subsection{Physical security} 
-Perhaps the most significant threat to wind farm is physical access to wind turbines and substations that enables an attacker to target the operations and transmission control networks. As mentioned above, existing physical security mechanisms are relatively weak, and the turbines and substations are typically sanctioned at remote locations. Efforts should be made to outfit every turbine with strong locking mechanisms with multifactor authentication, motion sensors, security cameras and remote alarm notifications system. Additionally, management should assign security personnel who are always ready to respond in a timely manner. Substations are very important components of a wind farm physical breaches of substations can be leveraged to wreak havoc on electricity generation and transmission assets. In addition to locking mechanisms, motion sensors, security cameras and remote alarms, substations should be fortified to the extent possible to defeat breaches of doors, windows, walls and roofs
- 
- 
 \end{multicols}
 \includegraphics{cache_poison}
+\begin{center}
+	\textit{Fig.7 The concept of Windpoison}
+\end{center}
 \begin{multicols}{2}
 \subsection{Network breach}
 
@@ -415,6 +408,9 @@ A typical use case involves Windshark being installed in a rogue device that is 
 
 
 \includegraphics[scale=0.5]{Windshark}
+\begin{center}
+	\textit{Fig.8 The concept of Windshark}
+\end{center}
 
 	
 \subsection{Mitigation}
@@ -422,15 +418,19 @@ A typical use case involves Windshark being installed in a rogue device that is 
 \subsubsection{Internal firewall}
 The flat logical design of the operations control network and inadequate or non-existent network access controls were leveraged in all the attack scenarios described above. A improvement solution is to isolate turbines, especially since there appears to be no operational requirement for turbine-to-turbine communications. And we can avoid contaminating  others wind turbine if one turbine is getting caught by an attacker. Wind turbine isolation can be implemented in the operations control network by retrofitting a internal firewall. and they can add/create tunnel at each turbine. It avoid a broadcast message. One wind turbine received only the message that concern him. 
 \includegraphics[scale=0.8]{internalfirewall}
-\newline
+\begin{center}
+	\textit{Fig.9 The concept of internal firewall}
+\end{center}
 The first isolation solution is to use inline firewalls with strict IP-based rule sets that prevent inter-turbine communications by default. A whitelist rules set can be better if the IP of each device doesn't change. A whitelist is a list or register of entities that provide a particular privilege, service, access or recognition. Entities on the list will be approved. And all the others will be rejected. Whitelisting can be better to blacklisting because we cann't list all vulnerability. Everyday new security breach was discovered.
 \includegraphics[scale=0.85]{vpn}
-\newline
+\begin{center}
+	\textit{Fig.10 The concept of VPN tunnels}
+\end{center}
 A more sophisticated and secure strategy for isolating turbines is to implement a “bump-in-the-wire” solution that provides end-to-end encryption for each turbine. This solution, which is presented in Fig. 11 , involves a dedicated VPN connection from each turbine to a substation (using a public key infrastructure with a unique key pair 
 for each turbine). This tunnels all operations control network communications over encrypted links. Unless the VPN server or key management process is compromised, an attacker would be unable to communicate with a turbine control system. 
 
 
-\subsubsection{message encryption}
+\subsubsection{Message encryption}
 In several cases, insecure OPC server implementations were identified during the security assessments of wind farms conducted by the authors of this paper (e.g., no encryption or authentication). In many instances, OPC-XML-DA was used to poll and set wind turbine data and control parameters from remote operator stations. The implementation of such a web-based protocol should adhere to the guidance provided by IEC 61400-25; for example, the protocol should be implemented over SSL/TLS in order to combat the attacks described in this paper.
 \newline Transport Layer Security (TLS).- and its predecessor, Secure Sockets Layer (SSL), are cryptographic protocols that provide communications security over a computer network. The Transport Layer Security protocol aims primarily to provide privacy and data integrity between two communicating computer applications.The TLS connections have one or more of the following properties:
 \begin{itemize}
@@ -438,7 +438,12 @@ In several cases, insecure OPC server implementations were identified during the
 	\item The identity of the communicating parties can be authenticated using public-key cryptography. This authentication can be made optional, but is generally required for at least one of the parties .
 	\item The connection ensures integrity because each message transmitted includes a message integrity check using a message authentication code to prevent undetected loss or alteration of the data during transmission
 \end{itemize}
-%\section{Chapter 4 : Attack Mitigation }
+
+\subsection{Physical security} 
+Perhaps the most significant threat to wind farm is physical access to wind turbines and substations that enables an attacker to target the operations and transmission control networks. As mentioned above, existing physical security mechanisms are relatively weak, and the turbines and substations are typically sanctioned at remote locations. Efforts should be made to outfit every turbine with strong locking mechanisms with multifactor authentication, motion sensors, security cameras and remote alarm notifications system. Additionally, management should assign security personnel who are always ready to respond in a timely manner. Substations are very important components of a wind farm physical breaches of substations can be leveraged to wreak havoc on electricity generation and transmission assets. In addition to locking mechanisms, motion sensors, security cameras and remote alarms, substations should be fortified to the extent possible to defeat breaches of doors, windows, walls and roofs
+
+\section{Chapter 5 : Conclusion }
+The focus on renewable energy has significantly increased the number of wind farm deployments in countries around the world. Nowadays, in the wind farm infrastructure, there are a lot of security breaches and insecure protocols are used. That will expose wind farms to myriad threats. Although a lot of threat is well-know and it exists solution to fight all threats. The problem is that companies use common across wind farm configurations and vendor products. And it presents a not insignificant risk that causes all the incidents in the wind farm.
 
 %\subsection{Introduction}
 % \textbf{Talk about the risk which we can prevent}
@@ -475,6 +480,22 @@ In several cases, insecure OPC server implementations were identified during the
  
 \bibliographystyle{lit}
 \bibliography{lit}
+http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4558422,
+https://link.springer.com/chapter/10.1007/978-1-4302-1955-2\_14e
+
+http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4020022\&tag=1 \newline
+
+https://ac.els-cdn.com/S1876610212002500/1-s2.0-S1876610212002500-main.pdf?\_tid=c1dc34d2-e41e-11e7-a91c-00000aab0f6b\&acdnat=1513620821\_4aab5851aa74825cdd849f19da59dcbf 
+\newline
+
+Industrial Process Automation Systems by Y. Jaganmohan Reddy, B.R. Mehta
+\newline
+
+http://www.diit.unict.it/users/scava/dispense/II/OPCDataAccessXMLSpecification.pdf
+\newline
+
+Renewable Energy: Selected Issues Volume I, Volume 1
+edited by Manuel Pérez-Donsión, Silvano Vergura, Gianpaolo Vitale
 \end{multicols}
 
 \end{document}
