@@ -267,11 +267,18 @@ The electrical collections system for the entire wind farm operates at a high vo
  \subsubsection{Control, Monitoring and Data collection}
  Supervisory control and data acquisition (SCADA) system control individual turbines while also displaying and reporting information on overall wind farm operation. The wind farm operator can choose to display information about any combination of operating factors.\newline
  The wind farm operator can display information about the whole wind farm. For example, maybe there is a group of turbines that need attention, due to a wind or ground situation in a specific area of the farm.in that case, the operator can see a group of turbines and look for common readings. Or, the wind farm operator can single out one individual turbine to provide data to a wind energy technician working at that location. Any number of combinations can be displayed. The information displayed by the SCADA generally includes the following: Turbine operating states, Power level, Total energy production.
- \paragraph{DNP3 (Distributed Network Protocol)}
- DNP3 is a set of communications protocols used between components in process automation systems. Its main use is in utilities such as electric and water companies. Usage in other industries is not common. It was developed for communications between several types of data acquisition and control equipment. It plays a crucial role in SCADA systems, where it is used by SCADA Master Stations (a.k.a. Control Centers), Remote Terminal Units (RTUs), and Intelligent Electronic Devices (IEDs). It is primarily used for communications between a master station and RTUs or IEDs. ICCP, the Inter-Control Center Communications Protocol (a part of IEC 60870-6), is used for inter-master station communications. Competing standards include the older Modbus protocol and the newer IEC 61850 protocol.
+ \paragraph{DNP version 3 (Distributed Network Protocol)} ~ \newline
+ DNP3 is a set of communications protocols used between components in process automation systems. Its main use is in utilities such as electric and water companies. Usage in other industries is not common. It was developed for communications between several types of data acquisition and control equipment. It plays a crucial role in SCADA systems, where it is used by SCADA Master Stations (a.k.a. Control Centers), Remote Terminal Units (RTUs), and Intelligent Electronic Devices (IEDs). It is primarily used for communications between a master station and RTUs or IEDs. ICCP, the Inter-Control Center Communications Protocol (a part of IEC 60870-6), is used for inter-master station communications.
+ \paragraph{Distributed Network Protocol Version 3 Security (DNPSec) Framework} ~ \newline
+ DNPSec authentication and integrity framework capabilities will verify the frame origin, assure that the frame sent is the frame received, assure that the network headers have not changed since the frame was sent, and give anti-replay protection. DNPSec confidentiality framework capability will encrypt frames to protect against eavesdropping and hide frame source by applying encryption methods. Some modifications to the DNP3 LPDU or frame structure are required to provide these capabilities.\newline
+ CRC is a common technique used in DNP3 for detecting data transmission errors. CRCs occupy 34 bytes out of 292 bytes of the DNP3 LPDU for integrity. These bytes will be utilized in a different way in the DNPSec framework. There are two main components of the DNPSec. The first is the DNPSec structure to construct the frame and transfer data in secure mode between the Master and the Slave. The second is the key exchange established during the installation and connection setup between the Master and the
+ 
+ DNP3 was not designed with security capabilities in mind. The SCADA vendors can build such capabilities by utilizing the DNPSec framework with a minimum time and cost without a major impact on the systems components and the application supporting them.
+ \newline
+ The framework enables confidentiality, integrity, and authenticity in the DNP3. Such a framework requires some enhancements in the data structure of the DNP3 Data Link layer, without requiring modification to the Master Station and Substation devices and the applications supporting them. Confidentiality and integrity are achieved by encrypting frames between the Master and the Slaves using a common session key assigned at the setup time of the SCADA components. A new session key is established when the frame sequence number reaches the value 232 – 1 or when the time period for the use of the session key is expired. Authentication is achieved by applying authentication techniques to assure that the sender of the frame is what it claims to be. Proof of concept by testing or simulation could be a future topic worth investigation.
  
   \subsubsection{Substations}
- Almost in every wind farm a step-up substation is built to collect all the energy generated by the turbines and received through the MV cables. The exceptions are new wind farms or existing wind farms extensions built near a substation that can be upgraded to absorb the additional energy produced: in these cases, only a control center with the SCADA and the medium voltage system is realized.
+ Almost in every wind farm a step-up substation is built to collect all the energy generated by the turbines and received through the MV (medium voltage) cables. The exceptions are new wind farms or existing wind farms extensions built near a substation that can be upgraded to absorb the additional energy produced: in these cases, only a control center with the SCADA and the medium voltage system is realized.
  Although there are different possible technical solutions, normally a substation will be composed by the following elements:
  \begin{description}
  	\item[$\bullet$]
@@ -290,7 +297,7 @@ The electrical collections system for the entire wind farm operates at a high vo
  	Fire protection and intruders protection systems
  \end{description}
  Substations collect the power generated by wind turbines and step up the voltage for injection into grid. Substations also serve as command and control centers. Depending on the energy output of a wind farm, there may be multiple substations.
- The operations side of a substation incorporates information technology, networking, safety and backup systems, and heating, ventilation and air conditioning (HVAC) systems. The transmissions side is air-gapped from the operations side. Unlike wind turbines, transmission control facilities have strong physical security mechanisms, including locks, cameras, motion sensors, remote alerting systems reinforced construction and fences.
+ The operations side of a substation incorporates information technology, networking, safety and backup systems, and Heating, Ventilation and Air Conditioning (HVAC) systems. The transmissions side is air-gapped from the operations side. Unlike wind turbines, transmission control facilities have strong physical security mechanisms, including locks, cameras, motion sensors, remote alerting systems reinforced construction and fences.
  
  \subsubsection{Control Center}
  The control center provides the centralized command and control of the wind farm networks. In many cases, the center is collocated with corporate offices. Some large wind farms may have multiple control centers each responsible for a geographic region.
@@ -306,7 +313,12 @@ management process. Security risk management involves the process of ensuring
 that the risk posture of an organization is within acceptable bounds as defined by
 senior management. Each security breach has a mitigation. Th main issue in network security is that we don't know how an attacker will try to invade our system. That's why a security risk assessment allows company to simulate or imagine several kind of attacks and see if their system has a failure.\newline
 There are four stages of the security risk management process:
-(i) security risk assessment; (ii) test and review; (iii) security risk mitigation; and (iv) operational security.
+(i) security risk assessment; (ii) test and review; (iii) security risk mitigation; and (iv) operational security. These stages form a cycle. It's to the user to decide if the system still needs to search new security breaches
+
+\includegraphics[scale=0.65]{security_management}
+\begin{center}
+	\textit{Fig.5 The role of the security risk assessment. Security risk assessments play a critical role in the security management process, providing information on the threats, assets, and risks to an organization.}
+\end{center}
 \begin{itemize}
     \item \textbf{Security Risk Assessment} : This is an objective analysis of the effectiveness of the current security controls that protects an organization’s assets and a
     determination of the probability of losses to those assets. A security risk
@@ -334,10 +346,7 @@ There are four stages of the security risk management process:
     adequate security posture.
 \end{itemize}
 
-\includegraphics[scale=0.65]{security_management}
-\begin{center}
-	\textit{Fig.6 The role of the security risk assessment. Security risk assessments play a critical role in the security management process, providing information on the threats, assets, and risks to an organization.}
-\end{center}
+
  
 \subsection{Ransomware and cryptocurrency}
 \subsubsection{Ransomware}
@@ -372,7 +381,7 @@ The bitcoin system, unlike traditional banking and payment systems, is based on 
     \item	No network segmentation between wind turbines
     \item	No physical security
  \end{itemize}
- Let's talk about some specific attack in the following chapter. The first thing an attacker must do is to enter in the network of Windfarm. Network devices have an IP but they don't have an online connection. They always have a private IP. They can't go to the outside and the outside can't communicate with the device. That's why an attacker must enter into the internal network. For that he has many possibilities. Once the attacker enters into the network, he can choose several targets. Each target has a specific role in the network structure. According to what he wants to do, the target, the methods and the dommage can be different in each case.
+ Let's talk about some specific attack in the following chapter. The first thing an attacker must do is to enter in the network of Windfarm. Network devices have an IP but they don't need an online connection. They always have a private IP. They can't go to the outside and the outside can't communicate with the device. That's why an attacker must enter into the internal network. For that he has many possibilities. Once the attacker enters into the network, he can choose several targets mentioned in the previous chapter. Each target has a specific role in the network structure. According to what he wants to do, the target, the methods and the dommage can be different in each case.
  
  
 \subsection{Network Access}
@@ -395,13 +404,13 @@ Once inside the turbine, an attacker could access the wind farm control network 
 \end{multicols}
 \includegraphics{cache_poison}
 \begin{center}
-	\textit{Fig.7 The concept of Windpoison}
+	\textit{Fig.6 The concept of Windpoison}
 \end{center}
 \begin{multicols}{2}
 \subsection{Network breach}
 
 \subsubsection{WindPoison}
-The Windpoison’s concept is to intercept all communication between the wind farm and the controller. They use the ARP Cache poisonning attack. The Address Resolution Protocol (ARP) is a communications protocol used for discovering the MAC address associated with a given IPv4 address. It is a critical function in Internet Protocol (IP) computer networks because based on these addresses we can determine who is the receiver of the message.
+The Windpoison’s concept is to intercept all communication between the wind farm and the controller. They use the ARP Cache poisonning attack. The Address Resolution Protocol (ARP) is a communications protocol used for discovering the MAC address associated with a given IPv4 address. It is a critical function in Internet Protocol computer networks because based on these addresses we can determine who is the receiver of the message.
  \newline Since ARP replies are not authenticated, an attacker can send an ARP reply containing a malicious <IP, MAC> association to any host on the network thus poisoning the ARP cache of that host. The attacker may supply her MAC address in the sent malicious association which enables her to receive all the packets sent by that host to the IP address specified in the association. This way the attacker may receive all the frames originally directed to some other host. If also the cache of the real destination host is poisoned, both communication flows are under the attacker's control. \newline
 In this situation, the attacker could launch a man-in-the middle. A man-in-the-middle attack (MITM) is an attack where the attacker secretly relays and changes the content of the message between wind turbine and the OPC client. When an OPC client sends a request, a falsified answer is responding to the OPC client and a wrong request is being sent to the wind turbine.  They believe they are directly communicating with each other but in fact the attacker has gained the control of the system. 
 
@@ -413,7 +422,7 @@ A typical use case involves Windshark being installed in a rogue device that is 
 
 \includegraphics[scale=0.5]{Windshark}
 \begin{center}
-	\textit{Fig.8 The concept of Windshark}
+	\textit{Fig.7 The concept of Windshark}
 \end{center}
 
 	
@@ -423,14 +432,14 @@ A typical use case involves Windshark being installed in a rogue device that is 
 The flat logical design of the operations control network and inadequate or non-existent network access controls were leveraged in all the attack scenarios described above. An improvement solution is to isolate turbines, especially since there appears to be no operational requirement for turbine-to-turbine communications. And we can avoid contaminating  others wind turbine if one turbine is getting caught by an attacker. Wind turbine isolation can be implemented in the operations control network by retrofitting an internal firewall and they can add/create a tunnel at each turbine. This way broadcasting is avoided and the wind turbine receives the messages it was supposed to receive.
 \includegraphics[scale=0.8]{internalfirewall}
 \begin{center}
-	\textit{Fig.9 The concept of internal firewall}
+	\textit{Fig.8 The concept of internal firewall}
 \end{center}
 The first isolation solution is to use inline firewalls with strict IP-based rule sets that prevent inter-turbine communications by default. A whitelist rules set can be better if the IP of each device doesn't change. A whitelist is a list or a register of entities that provides a particular privilege, service, access or recognition. Entities on the list will be approved and all the others will be rejected. Whitelisting is better then blacklisting because we can't list all vulnerabilities and new security breaches are being discovered everyday.
 \includegraphics[scale=0.85]{vpn}
 \begin{center}
-	\textit{Fig.10 The concept of VPN tunnels}
+	\textit{Fig.9 The concept of VPN tunnels}
 \end{center}
-A more sophisticated and secure strategy for isolating turbines is to implement a “bump-in-the-wire” solution that provides end-to-end encryption for each turbine. This solution, which is presented in Fig. 11 , involves a dedicated VPN connection from each turbine to a substation (using a public key infrastructure with a unique key pair 
+A more sophisticated and secure strategy for isolating turbines is to implement a “bump-in-the-wire” solution that provides end-to-end encryption for each turbine. This solution, which is presented in Fig. 9 , involves a dedicated VPN connection from each turbine to a substation (using a public key infrastructure with a unique key pair 
 for each turbine). This tunnels all operations control network communications over encrypted links. Unless the VPN server or key management process is compromised, an attacker would be unable to communicate with a turbine control system. 
 
 
@@ -496,6 +505,13 @@ The focus on renewable energy has significantly increased the number of wind far
 \item http://www.diit.unict.it/users/scava/dispense/II/OPCDataAccessXMLSpecification.pdf
 \item Renewable Energy: Selected Issues Volume I, Volume 1
 edited by Manuel Pérez-Donsión, Silvano Vergura, Gianpaolo Vitale
+\item The Security Risk Assessement Handbook, by Douglas J. Landoll.
+\item Ultimate guide to bitcoin, by Michael Miller
+\item http://www.symantec.com/content/en/us/enterprise/media/security\_response/whitepapers/the-evolution-of-ransomware.pdf
+\item http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=\&arnumber=4279062
+\item Wind turbine control systems David.A rivkin, Lois D anderson , Laurel Silk
+\item DNPSec: Distributed Network Protocol Version 3 (DNP3) Security Framework
+\item http://www.windfarmbop.com/wind-farm-substation-an-overview/
 
 \end{itemize}
 \end{document}
