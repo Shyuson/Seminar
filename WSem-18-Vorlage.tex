@@ -105,14 +105,12 @@
 
 \begin{abstract}
 \noindent 
-Because of global warming issues many countries around the world have began to adopt wind farm energy. Being a new emerging technology it still lacks the experience in the security field and therefor it has become a target of attacks. Attackers can easily access and damage the windfarm. In this paper we explain what a wind farm is, what protocols are used to communicate with the wind farm, what types of security breaches can be done and how to prevent these attacks.
+Because of global warming issues, many countries around the world have began to adopt wind farm energy. Being a new emerging technology it still lacks the experience in the security field and therefor it has become a target of attacks. Attackers can easily access and damage the windfarm. In this paper we explain what a wind farm is, what protocols are used to communicate with the wind farm, what types of security breaches can be done and how to prevent these attacks.
 \end{abstract}
 \begin{multicols}{2}
 
 
 \section{Chapter 1 : General Introduction}
-
-%\cite{author = {Trevor M. Letcher}, title = {Wind Energy Engineering}, journal = \\{Derp}, year = {2015}, volume = {1}, pages = {567},}
  \subsection{Why Wind Energy?}
  \subsubsection{Climate Change}
  Today we are threatened by global warming and climate change and therefore the energy industry should try to find energy sources free of carbon dioxide pollution and one of the options is generating electricity from wind energy. Wind and solar energy produce only 4\% of the global supply of electricity while coal, the worst fossil fuel polluter, is still the main energy source for generating electricity. So, producing electricity from wind is where we should be working towards in order to avoid any other environmentally unfriendly material for producing electricity. Hopefully with mass production and bigger and more efficient wind turbines, wind energy and other renewable forms of energy will become cheaper and more convenient to use than fossil fuel and therefore become the main source of producing energy.
@@ -148,14 +146,13 @@ Because of global warming issues many countries around the world have began to a
  	\item[$\bullet$]
  	\textit{Initial cost.} This is the most serious drawback of setting up a new wind farm and also the main reason why many governments offer subsidies.
  	
- 	TODO: ADD REFERENCE : Wind Energy Engineering, by Trevor M. Letcher.
  \end{description}
 
 \subsection{Anatomy of a Wind Turbine}
  \subsubsection{Rotors and Blades}
  %Und noch etwas Text... \cite{muster} \newline
  The rotor is the element that captures energy from the wind. The efficiency depends on the number of the blades in the rotor, their shape, their length and the speed at which the rotor turns. The tip speed ratio determines the speed at which a wind turbine rotor turns. It should be an optimum so that each blade should pass through the air and the turbulence it creates should have dissipated before the next blade arrives in the same position.
- TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze. 
+
 \subsubsection{The Drive Train, Nacelles and Towers}
 \begin{description}
 \item[$\bullet$] 
@@ -165,7 +162,6 @@ The house of all the main components of the machine except the rotor is called a
 \item[$\bullet$] 
 The tower's purpose is to raise the rotor so that it's blades are clear off the ground and of any other obstacle. The higher the turbine rotor is mounted, the stronger the wind, so it is better to raise the nacelle on the highest tower possible. Usually a tower's height is two or three times the blade length. There are different types of towers including: tubular steel towers, lattice towers or concrete towers.
 
-TODO: ADD REFERENCE : Wind Power Generation by Paul Breeze, Understanding Wind Power Technology: Theory, Deployment and Optimisation by Alois Schaffarczyk 
 \end{description}
 
 \section{Chapter 2 : Wind Farm Infrastructure }
@@ -297,22 +293,22 @@ The electrical collections system for the entire wind farm operates at a high vo
  The operations side of a substation incorporates information technology, networking, safety and backup systems, and heating, ventilation and air conditioning (HVAC) systems. The transmissions side is air-gapped from the operations side. Unlike wind turbines, transmission control facilities have strong physical security mechanisms, including locks, cameras, motion sensors, remote alerting systems reinforced construction and fences.
  
  \subsubsection{Control Center}
- The control center provides centralized command and control of wind farm networks. in many cases, the center is collocated with corporate offices. Some large wind farm may have multiple control centers each responsible for a geographic region.
+ The control center provides the centralized command and control of the wind farm networks. In many cases, the center is collocated with corporate offices. Some large wind farms may have multiple control centers each responsible for a geographic region.
  The control center is typically located in a metropolitan area, although smaller control centers may be located in non-urban areas closer to the wind farms. The control center is considered to be a high-impact asset and is, therefore required to be NERC-CIP compliant according to the U.S regulations. Therefore, it implements strong physical information technology security control mechanisms. Each control center has a backup facility that can ensure continuity of operations. This paper doesn’t not consider the threats that originate from or target a control center.
      
 \section{Chapter 3 : Risk Management and Ransom } 
 \subsection{Introduction}
-An attacker intending to disrupt wind farm operations or damage equipment would concentrate on six types of targets: (i) control networks; (ii) programmable logic/automation controllers; (iii) network devices; (iv) operator stations; (v) engineering workstations; and (vi) historians. The targets may be accessed using several alternative. The main reason is often the money. Most often we use a ransomware with a cryptocurrency. The most famous cryptocurrency is the Bitcoin . Company can protect their systems. But unfortunately the 0 risk don't exist in the world.
+An attacker intending to disrupt wind farm operations or damage equipment would concentrate on six types of targets: (i) control networks; (ii) programmable logic/automation controllers; (iii) network devices; (iv) operator stations; (v) engineering workstations; and (vi) historians. The targets may be accessed using several alternatives. The main reason is often the money. Most often we use a ransomware with a cryptocurrency. The most famous cryptocurrency is Bitcoin. Companies can protect their systems but unfortunately full security can never be achieved.
 
 \subsection{Definition of Risk Management}
 A security risk assessment is an important element in the overall security risk
 management process. Security risk management involves the process of ensuring
 that the risk posture of an organization is within acceptable bounds as defined by
-senior management. Each security breach has a mitigation. Th main problem issue in security in network is that we don't know how an attacker will to invade our system. That's why a security risk assessment allow company to simulate or imagine several kind of attack and see if their system has a failure.\newline
+senior management. Each security breach has a mitigation. Th main issue in network security is that we don't know how an attacker will try to invade our system. That's why a security risk assessment allows company to simulate or imagine several kind of attacks and see if their system has a failure.\newline
 There are four stages of the security risk management process:
 (i) security risk assessment; (ii) test and review; (iii) security risk mitigation; and (iv) operational security.
 \begin{itemize}
-    \item \textbf{Security Risk Assessment} : This is an objective analysis of the effectiveness of the current security controls that protect an organization’s assets and a
+    \item \textbf{Security Risk Assessment} : This is an objective analysis of the effectiveness of the current security controls that protects an organization’s assets and a
     determination of the probability of losses to those assets. A security risk
     assessment reviews the threat environment of the organization, the value of
     assets, the criticality of systems, the vulnerabilities of the security controls,
@@ -326,7 +322,7 @@ There are four stages of the security risk management process:
     Security testing is performed more frequently than security risk assessments.
     \item \textbf{Risk Mitigation} : Risks to an organization’s assets are reduced through
     the implementation of new security controls or the improvement of existing
-    controls. Security risk assessments provide information to allow the
+    controls. Security risk assessments provides information to allow the
     senior management to make risk-based decisions for the development of
     new controls or expenditure of resources on security improvements on existing controls. Security test and review efforts provide information on
     how to keep existing controls up to date. Risk can be mitigated through
@@ -342,9 +338,6 @@ There are four stages of the security risk management process:
 \begin{center}
 	\textit{Fig.6 The role of the security risk assessment. Security risk assessments play a critical role in the security management process, providing information on the threats, assets, and risks to an organization.}
 \end{center}
-
-\textbf{Add some explication ont these parts.} 
- 
  
 \subsection{Ransomware and cryptocurrency}
 \subsubsection{Ransomware}
@@ -359,8 +352,7 @@ computer or device
 access to files or data.
 \end{itemize}
 Crypto ransomware doesn’t necessarily have to use encryption to stop users from accessing their data, but the vast majority of it does. Both types of ransomware are aimed squarely at our digital lifestyle. They are designed to deny us access something we want or need and offer to return what is rightfully ours on payment of a ransom. Despite having similar objectives, the approaches taken by each type of ransomware are quite different.
-In our case, the objective is to take control and stop the operation of Windfarm. Then the attacker send a email to demand money via a cryptocurrency like Bitcoin
-
+In our case, the objective is to take control and stop the operation of Windfarm. The attacker would then send a email to demand money via a cryptocurrency like Bitcoin.
 
 \subsubsection{cryptocurrency : Bitcoin}
 
@@ -368,29 +360,27 @@ Bitcoin is a collection of concepts and technologies that form the basis of a di
 Users can transfer bitcoins over the network to do just about anything that can be done with conventional currencies, including buy and sell goods, send money to people or organizations, or extend credit. Bitcoins can be purchased, sold, and exchanged for other currencies at specialized currency exchanges. Bitcoin in a sense is the perfect form of money for the Internet because it is fast, secure, and borderless.\newline
 \newline
 Unlike traditional currencies, bitcoins are entirely virtual. There are no physical coins or even digital coins per se. The coins are implied in transactions that transfer value from sender to recipient. Users of bitcoin own keys that allow them to prove ownership of transactions in the bitcoin network, unlocking the value to spend it and transfer it to a new recipient. Those keys are often stored in a digital wallet on each user’s computer. Possession of the key that unlocks a transaction is the only prerequisite to spending bitcoins, putting the control entirely in the hands of each user.\newline
-The bitcoin system, unlike traditional banking and payment systems, is based on de-centralized trust. Instead of a central trusted authority, in bitcoin, trust is achieved as an emergent property from the interactions of different participants in the bitcoin system. the transaction is flowing on per-to-per network. It's give a 
-complete anonymous. That's why is used
+The bitcoin system, unlike traditional banking and payment systems, is based on de-centralized trust. Instead of a central trusted authority, in bitcoin, trust is achieved as an emergent property from the interactions of different participants in the bitcoin system. The transaction is flowing on per-to-per network and everything happens anonymously, hence that's the reason it is used.
  
 \section{Chapter 4 : Security Breach}
 
 \subsection{Introduction}
- According to Staggs, a Ph.D. from University of Tulsa in Tulsa in Oklahoma, There are some vulnerabilities in wind farm nowaday. He listed a overviews of vulnerabilities facing wind farms:
+ According to Staggs, a Ph.D. from University of Tulsa in Tulsa in Oklahoma, there are some vulnerabilities in wind farm nowadays. He listed some overviews of vulnerabilities facing wind farms:
  \begin{itemize}
      \item Programmable automation controllers (PACs) running legacy operating systems, everything is operating as a root, use of insecure remote management services, easy to figure out default passwords, and no code signing
     \item	No authentication or encryption of control messages
     \item	No network segmentation between wind turbines
     \item	No physical security
  \end{itemize}
- Let's talk about some specific attack in the following chapter. The first things an attacker must do is to enter in the network of Windfarm. Each network devices have an IP but they didn't have an online connection. They always have a private IP. They can't go to the outside and the outside can't communicate with the device. That's why an attacker must enter into the internal network. For that he have many possibilities. Once the attacker enters into the network, he can choose several targets. Each target has a specific role in the network structure. According to what he wants to do, the target, the methods and the dommage can be different in each case.
+ Let's talk about some specific attack in the following chapter. The first thing an attacker must do is to enter in the network of Windfarm. Network devices have an IP but they don't have an online connection. They always have a private IP. They can't go to the outside and the outside can't communicate with the device. That's why an attacker must enter into the internal network. For that he has many possibilities. Once the attacker enters into the network, he can choose several targets. Each target has a specific role in the network structure. According to what he wants to do, the target, the methods and the dommage can be different in each case.
  
-
-
+ 
 \subsection{Network Access}
 Five distinct attack vectors are available to target a wind farm control network: cyber access using a wind farm vendor network; cyber access using technician equipment; and cyber via a compromised supply chain, and the most important part in our topic; physical access at a wind turbine, physical access at a substation.
  \subsubsection{Physical access at a wind turbine}
  Wind turbines are generally erected in remote locations with adequate wind speed duration. However, the physical security mechanisms that protect against unauthorized entry inside a wind turbine are fairly simplistic. Typically, the door to a turbine is secured by padlock that can be easily picked or bypassed using bolt cutters. Even if a turbine door has an expensive security mechanism that alert a control center about unauthorized entry, because of the remote location, it may take considerable time for responder to reach the turbine to investigate the unauthorized entry.
  \newline
-Once inside the turbine, an attacker could access the wind farm control network by plugging a malicious device such as a Raspberry Pi or a Gustix into network switch. One option is to keep the network configuration intact and insert the malicious device as an additional node in the network. the attacker can use the malicious node to target other nodes in the network. These nodes include other connected turbines and substations. A malicious device configured as a new node in the wind farm control network is susceptible to discovery upon visual inspection as well as over the network. therefore, a more sophisticated access strategy is to position the malicious deice in a man-in-the middle configuration. This involves unplugging a network connection to a trusted device, inserting the malicious device before the device and quickly restoring network connectivity. Implanting the malicious device would cause a temporary disruption, which might be noticed at the transient nature of disruption and timely resumption of network connectivity, it is unlikely that security personnel would immediately trail to the site to investigate the anomaly. A more sophisticated approach is to hide a man-in-the-middle rouge device inside a trusted industrial control system component. This parasitic device drawn power from the same source as the control system component and would be difficult to discover without a detailed inspection involving the removal and disassembly of the control system component. Having gained access to wind farm control network, the attacker could target a variety of information technology and control system assets directly or the attacker could implant malware. The threats include obtaining information about devices, protocols, network configurations and operations; disrupting wind farm operations; and even damaging key physical component, including the wind turbine itself.
+Once inside the turbine, an attacker could access the wind farm control network by plugging a malicious device such as a Raspberry Pi or a Gustix into network switch. One option is to keep the network configuration intact and insert the malicious device as an additional node in the network. The attacker can use the malicious node to target other nodes in the network. These nodes include other connected turbines and substations. A malicious device configured as a new node in the wind farm control network is susceptible to discovery upon visual inspection as well as over the network. therefore, a more sophisticated access strategy is to position the malicious deice in a man-in-the middle configuration. This involves unplugging a network connection to a trusted device, inserting the malicious device before the device and quickly restoring network connectivity. Implanting the malicious device would cause a temporary disruption, which might be noticed at the transient nature of disruption and timely resumption of network connectivity, it is unlikely that security personnel would immediately trail to the site to investigate the anomaly. A more sophisticated approach is to hide a man-in-the-middle rouge device inside a trusted industrial control system component. This parasitic device drawn power from the same source as the control system component and would be difficult to discover without a detailed inspection involving the removal and disassembly of the control system component. Having gained access to wind farm control network, the attacker could target a variety of information technology and control system assets directly or the attacker could implant malware. The threats include obtaining information about devices, protocols, network configurations and operations; disrupting wind farm operations; and even damaging key physical component, including the wind turbine itself.
  \subsubsection{Physical access at a substation}
  Unlike wind turbines, substations have strong physical security mechanisms such as locks, cameras, motion sensors, remote alerting systems, reinforced constructions and fences. However, substations are still vulnerable to physical penetration and can also be accessed by malicious insiders. Since many substations are located in remote areas and are usually unnamed, it may take some time for security personnel to respond to the site of a breach. Having breached a substation, an attacker can apply the same techniques and tools used to gain access to the wind farm control networks; install persistent, hard-to-discover, parasitic devices; implant malware to surveil and disrupt wind farm operations; and possibly damage or destroy wind farm assets. In fact, unauthorized access to a substation could have more serious implications than a wind turbine breach. This is because the attacker can potentially manipulate the operations controls system as well as the transmission control system.
  \subsubsection{Cyber asses using technician equipment}
@@ -411,13 +401,14 @@ Once inside the turbine, an attacker could access the wind farm control network 
 \subsection{Network breach}
 
 \subsubsection{WindPoison}
-The Windpoison’s concept is to intercept all communication between the wind farm and the controller. They use the ARP Cache poisonning attack. The Address Resolution Protocol (ARP) is a communications protocol used for discovering the MAC address associated with a given IPv4 address. It is a critical function in Internet Protocol (IP) computer networks because theses adresses is obligate for know who is receiver of a message. \newline Since ARP replies are not authenticated, an attacker can send an ARP reply containing a malicious <IP, MAC> association to any host on the network thus poisoning the ARP cache of that host. The attacker may supply her MAC address in the sent malicious association which enables her to receive all the packets sent by that host to the IP address specified in the association. This way the attacker may receive all the frames originally directed to some other host. If also the cache of the real destination host is poisoned, both communication flows are under the attacker's control. \newline
-In this situation, the attacker could launch a man-in-the middle. A man-in-the-middle attack (MITM) is an attack where the attacker secretly relays and change the content of message between wind turbine and OPC client. When an OPC client sends a request, a falsified answer is responding to the OPC client and a wrong request is sending to the wind turbine.  They believe they are directly communicating with each other but in the fact the attacker has gained the control of the system. 
+The Windpoison’s concept is to intercept all communication between the wind farm and the controller. They use the ARP Cache poisonning attack. The Address Resolution Protocol (ARP) is a communications protocol used for discovering the MAC address associated with a given IPv4 address. It is a critical function in Internet Protocol (IP) computer networks because based on these addresses we can determine who is the receiver of the message.
+ \newline Since ARP replies are not authenticated, an attacker can send an ARP reply containing a malicious <IP, MAC> association to any host on the network thus poisoning the ARP cache of that host. The attacker may supply her MAC address in the sent malicious association which enables her to receive all the packets sent by that host to the IP address specified in the association. This way the attacker may receive all the frames originally directed to some other host. If also the cache of the real destination host is poisoned, both communication flows are under the attacker's control. \newline
+In this situation, the attacker could launch a man-in-the middle. A man-in-the-middle attack (MITM) is an attack where the attacker secretly relays and changes the content of the message between wind turbine and the OPC client. When an OPC client sends a request, a falsified answer is responding to the OPC client and a wrong request is being sent to the wind turbine.  They believe they are directly communicating with each other but in fact the attacker has gained the control of the system. 
 
 
 \subsubsection{WindShark}
-A others way to gain the control of wind turbine is to inject some malicious request at the right time in the right place. First of all we need a tools to fabricate OPC control messages that are normally issued by an operator station in a wind farm. Then the goal is to replay these OPC requesst to the wind turbine. Since the message come from the attacker, he can do what he want. It's the concept of the WindShark. With Windshark, we can demonstrate the ease with which the operation of a wind turbine could be manipulated by a malicious entity. Windshark transmits OPC-XML-DA write request messages to the target turbine at the right times to gain the control of the wind turbine. That is when the write access is obtained. \newline
-A typical use case involves Windshark being installed in a rogue device that is connected to the operations control system. After performing network controls to identify an accessible wind turbine, the attacker can starting to excute his malicious request. A more sophisticated technique involves the use of the computer worm concept to maliciously control a wind turbine.The idea is to load a malicious program and there aren't a physical things like a roght device. The program could modify the control logic, change process control variables and setpoints, and issue unauthorized control commands to slave programmable logic controllers in the nacelle or rotor. The computer worm could also be designed to propagate to programmable automation controllers in other wind turbines, potentially impacting an entire wind farm.
+Another way to gain control over a wind turbine is to inject some malicious request at the right time in the right place. First of all we need a tool to fabricate OPC control messages that are normally issued by an operator station in a wind farm. Then the goal is to replay these OPC request to the wind turbine. Since the message comes from the attacker, he can do whatever he wants. It's the concept of the WindShark. With Windshark, we can demonstrate the ease with which the operation of a wind turbine could be manipulated by a malicious entity. Windshark transmits OPC-XML-DA write request messages to the target turbine at the right time to gain the control of the wind turbine. That is when the write access is obtained. \newline
+A typical use case involves Windshark being installed in a rogue device that is connected to the operations control system. After performing network controls to identify an accessible wind turbine, the attacker can start executing his malicious request. A more sophisticated technique involves the use of the computer worm concept to maliciously control a wind turbine.The idea is to load a malicious program and this program could modify the control logic, change process control variables and setpoints, and issue unauthorized control commands to slave programmable logic controllers in the nacelle or rotor. The computer worm could also be designed to propagate to programmable automation controllers in other wind turbines, potentially impacting an entire wind farm.
 
 
 \includegraphics[scale=0.5]{Windshark}
@@ -429,12 +420,12 @@ A typical use case involves Windshark being installed in a rogue device that is 
 \subsection{Mitigation}
 
 \subsubsection{Internal firewall}
-The flat logical design of the operations control network and inadequate or non-existent network access controls were leveraged in all the attack scenarios described above. A improvement solution is to isolate turbines, especially since there appears to be no operational requirement for turbine-to-turbine communications. And we can avoid contaminating  others wind turbine if one turbine is getting caught by an attacker. Wind turbine isolation can be implemented in the operations control network by retrofitting a internal firewall. and they can add/create tunnel at each turbine. It avoid a broadcast message. One wind turbine received only the message that concern him. 
+The flat logical design of the operations control network and inadequate or non-existent network access controls were leveraged in all the attack scenarios described above. An improvement solution is to isolate turbines, especially since there appears to be no operational requirement for turbine-to-turbine communications. And we can avoid contaminating  others wind turbine if one turbine is getting caught by an attacker. Wind turbine isolation can be implemented in the operations control network by retrofitting an internal firewall and they can add/create a tunnel at each turbine. This way broadcasting is avoided and the wind turbine receives the messages it was supposed to receive.
 \includegraphics[scale=0.8]{internalfirewall}
 \begin{center}
 	\textit{Fig.9 The concept of internal firewall}
 \end{center}
-The first isolation solution is to use inline firewalls with strict IP-based rule sets that prevent inter-turbine communications by default. A whitelist rules set can be better if the IP of each device doesn't change. A whitelist is a list or register of entities that provide a particular privilege, service, access or recognition. Entities on the list will be approved. And all the others will be rejected. Whitelisting can be better to blacklisting because we cann't list all vulnerability. Everyday new security breach was discovered.
+The first isolation solution is to use inline firewalls with strict IP-based rule sets that prevent inter-turbine communications by default. A whitelist rules set can be better if the IP of each device doesn't change. A whitelist is a list or a register of entities that provides a particular privilege, service, access or recognition. Entities on the list will be approved and all the others will be rejected. Whitelisting is better then blacklisting because we can't list all vulnerabilities and new security breaches are being discovered everyday.
 \includegraphics[scale=0.85]{vpn}
 \begin{center}
 	\textit{Fig.10 The concept of VPN tunnels}
@@ -494,16 +485,15 @@ The focus on renewable energy has significantly increased the number of wind far
 \bibliographystyle{lit}
 \bibliography{lit}
 \begin{itemize}
+\item Wind Energy Engineering, by Trevor M. Letcher.
+\item Wind Power Generation by Paul Breeze. 
+\item Understanding Wind Power Technology: Theory, Deployment and Optimisation by Alois Schaffarczyk. 
 \item http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4558422 
 \item https://link.springer.com/chapter/10.1007/978-1-4302-1955-2\_14e
-
 \item http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4020022\&tag=1 
 \item https://ac.els-cdn.com/S1876610212002500/1-s2.0-S1876610212002500-main.pdf?\_tid=c1dc34d2-e41e-11e7-a91c-00000aab0f6b\&acdnat=1513620821\_4aab5851aa74825cdd849f19da59dcbf 
-
 \item Industrial Process Automation Systems by Y. Jaganmohan Reddy, B.R. Mehta
-
 \item http://www.diit.unict.it/users/scava/dispense/II/OPCDataAccessXMLSpecification.pdf
-
 \item Renewable Energy: Selected Issues Volume I, Volume 1
 edited by Manuel Pérez-Donsión, Silvano Vergura, Gianpaolo Vitale
 
